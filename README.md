@@ -1,4 +1,4 @@
-BNL Scientific Computing Labs for C++
+BNL Scientific Computing Labs using C++
 
 # Welcome to the BNL Scientific Computing Labs for C++
-## using Linux, Code::Blocks, Clang, Allegro, and CERN ROOT
+## for Linux, Code::Blocks, Clang, Allegro, and CERN ROOT
