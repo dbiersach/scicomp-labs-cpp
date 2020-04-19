@@ -1,0 +1,502 @@
+# depslib dependency file v1.0
+1587263534 source:/home/dbiersach/Desktop/scicomp-labs-cpp/has-won/has-won.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/has-won/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1523909660 /usr/include/stdio.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<bits/types.h>
+	<bits/types/__FILE.h>
+	<bits/types/FILE.h>
+	<bits/libio.h>
+	<stdarg.h>
+	<bits/stdio_lim.h>
+	<bits/sys_errlist.h>
+	<bits/getopt_posix.h>
+	<bits/stdio.h>
+	<bits/stdio2.h>
+	<bits/stdio-ldbl.h>
+
+1523909660 /usr/include/time.h
+	<features.h>
+	<stddef.h>
+	<bits/time.h>
+	<bits/types/clock_t.h>
+	<bits/types/time_t.h>
+	<bits/types/struct_tm.h>
+	<bits/types/struct_timespec.h>
+	<bits/types/clockid_t.h>
+	<bits/types/timer_t.h>
+	<bits/types/struct_itimerspec.h>
+	<bits/types/locale_t.h>
+
+1523909660 /usr/include/features.h
+	<stdc-predef.h>
+	<sys/cdefs.h>
+	<gnu/stubs.h>
+
+1523909660 /usr/include/stdc-predef.h
+
+1523909660 /usr/include/math.h
+	<bits/libc-header-start.h>
+	<bits/types.h>
+	<bits/math-vector.h>
+	<bits/floatn.h>
+	<bits/flt-eval-method.h>
+	<bits/fp-logb.h>
+	<bits/fp-fast.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/mathcalls-helper-functions.h>
+	<bits/mathcalls.h>
+	<bits/iscanonical.h>
+	<bits/mathinline.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+	<bits/math-finite.h>
+
+1523909660 /usr/include/assert.h
+	<features.h>
+
+1441921812 /usr/include/allegro5/allegro.h
+	"allegro5/base.h"
+	"allegro5/altime.h"
+	"allegro5/bitmap.h"
+	"allegro5/bitmap_draw.h"
+	"allegro5/bitmap_io.h"
+	"allegro5/bitmap_lock.h"
+	"allegro5/blender.h"
+	"allegro5/clipboard.h"
+	"allegro5/color.h"
+	"allegro5/config.h"
+	"allegro5/cpu.h"
+	"allegro5/debug.h"
+	"allegro5/display.h"
+	"allegro5/drawing.h"
+	"allegro5/error.h"
+	"allegro5/events.h"
+	"allegro5/file.h"
+	"allegro5/fixed.h"
+	"allegro5/fmaths.h"
+	"allegro5/fshook.h"
+	"allegro5/fullscreen_mode.h"
+	"allegro5/haptic.h"
+	"allegro5/joystick.h"
+	"allegro5/keyboard.h"
+	"allegro5/memory.h"
+	"allegro5/monitor.h"
+	"allegro5/mouse.h"
+	"allegro5/mouse_cursor.h"
+	"allegro5/path.h"
+	"allegro5/render_state.h"
+	"allegro5/shader.h"
+	"allegro5/system.h"
+	"allegro5/threads.h"
+	"allegro5/timer.h"
+	"allegro5/tls.h"
+	"allegro5/touch_input.h"
+	"allegro5/transformations.h"
+	"allegro5/utf8.h"
+	"allegro5/alcompat.h"
+
+1581133536 /usr/include/allegro5/base.h
+	<errno.h>
+	<limits.h>
+	<limits.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<sys/types.h>
+	<fortify/fortify.h>
+	<dmalloc.h>
+	"allegro5/internal/alconfig.h"
+
+1523909660 /usr/include/errno.h
+	<features.h>
+	<bits/errno.h>
+
+1523909660 /usr/include/limits.h
+	<bits/libc-header-start.h>
+	<bits/wordsize.h>
+	<bits/posix1_lim.h>
+	<bits/posix2_lim.h>
+	<bits/xopen_lim.h>
+
+1523909660 /usr/include/stdlib.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<bits/waitflags.h>
+	<bits/waitstatus.h>
+	<bits/floatn.h>
+	<bits/types/locale_t.h>
+	<sys/types.h>
+	<alloca.h>
+	<bits/stdlib-bsearch.h>
+	<bits/stdlib-float.h>
+	<bits/stdlib.h>
+	<bits/stdlib-ldbl.h>
+
+1523909660 /usr/include/alloca.h
+	<features.h>
+	<stddef.h>
+
+1523909660 /usr/include/string.h
+	<bits/libc-header-start.h>
+	<stddef.h>
+	<bits/types/locale_t.h>
+	<strings.h>
+	<bits/string_fortified.h>
+
+1523909660 /usr/include/strings.h
+	<features.h>
+	<stddef.h>
+	<bits/types/locale_t.h>
+	<bits/strings_fortified.h>
+
+1469641829 /usr/include/allegro5/internal/alconfig.h
+	"allegro5/platform/alplatf.h"
+	"allegro5/platform/alwatcom.h"
+	"allegro5/platform/almngw32.h"
+	"allegro5/platform/albcc32.h"
+	"allegro5/platform/almsvc.h"
+	"allegro5/platform/aliphonecfg.h"
+	"allegro5/platform/alosxcfg.h"
+	"allegro5/platform/alandroidcfg.h"
+	"allegro5/platform/alraspberrypicfg.h"
+	"allegro5/platform/alucfg.h"
+	"allegro5/platform/allegro_sdl_config.h"
+	"allegro5/platform/astdint.h"
+	"allegro5/platform/astdbool.h"
+
+1468702395 /usr/include/allegro5/platform/alwatcom.h
+	<io.h>
+	<i86.h>
+	<conio.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1523909660 /usr/include/fcntl.h
+	<features.h>
+	<bits/types.h>
+	<bits/fcntl.h>
+	<bits/types/struct_timespec.h>
+	<bits/stat.h>
+	<bits/fcntl2.h>
+
+1523909660 /usr/include/malloc.h
+	<features.h>
+	<stddef.h>
+	<stdio.h>
+
+1365819268 /usr/include/allegro5/platform/almngw32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1468702395 /usr/include/allegro5/platform/albcc32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1468702395 /usr/include/allegro5/platform/almsvc.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1354191040 /usr/include/allegro5/platform/aliphonecfg.h
+	<fcntl.h>
+	<unistd.h>
+
+1523909660 /usr/include/unistd.h
+	<features.h>
+	<bits/posix_opt.h>
+	<bits/environments.h>
+	<bits/types.h>
+	<stddef.h>
+	<bits/confname.h>
+	<bits/getopt_posix.h>
+	<bits/unistd.h>
+
+1365819268 /usr/include/allegro5/platform/alosxcfg.h
+	"allegro5/platform/alplatf.h"
+
+1324189852 /usr/include/allegro5/platform/alandroidcfg.h
+
+1354191040 /usr/include/allegro5/platform/alraspberrypicfg.h
+	<fcntl.h>
+	<unistd.h>
+	<sys/types.h>
+
+1365818594 /usr/include/allegro5/platform/alucfg.h
+	<fcntl.h>
+	<unistd.h>
+	"alunix.h"
+	"allegro5/platform/alplatf.h"
+
+1266925320 /usr/include/allegro5/platform/alunix.h
+
+1405880629 /usr/include/allegro5/platform/allegro_sdl_config.h
+	<fcntl.h>
+	<unistd.h>
+
+1530277051 /usr/include/allegro5/platform/astdint.h
+	<inttypes.h>
+	<stdint.h>
+	<limits.h>
+
+1523909660 /usr/include/inttypes.h
+	<features.h>
+	<stdint.h>
+	<stddef.h>
+
+1523909660 /usr/include/stdint.h
+	<bits/libc-header-start.h>
+	<bits/types.h>
+	<bits/wchar.h>
+	<bits/wordsize.h>
+	<bits/stdint-intn.h>
+	<bits/stdint-uintn.h>
+
+1281012045 /usr/include/allegro5/platform/astdbool.h
+	<stdbool.h>
+
+1285076981 /usr/include/allegro5/altime.h
+	"allegro5/base.h"
+
+1550470301 /usr/include/allegro5/bitmap.h
+	"allegro5/color.h"
+
+1440810792 /usr/include/allegro5/color.h
+	"allegro5/base.h"
+
+1354620434 /usr/include/allegro5/bitmap_draw.h
+	"allegro5/bitmap.h"
+
+1443029817 /usr/include/allegro5/bitmap_io.h
+	"allegro5/bitmap.h"
+	"allegro5/file.h"
+
+1419211222 /usr/include/allegro5/file.h
+	"allegro5/base.h"
+	"allegro5/path.h"
+	"allegro5/utf8.h"
+
+1484274489 /usr/include/allegro5/path.h
+	"allegro5/base.h"
+	"allegro5/utf8.h"
+
+1337169289 /usr/include/allegro5/utf8.h
+	"allegro5/base.h"
+
+1418623615 /usr/include/allegro5/bitmap_lock.h
+	"allegro5/bitmap.h"
+
+1459716376 /usr/include/allegro5/blender.h
+	"allegro5/base.h"
+	"allegro5/color.h"
+
+1441574420 /usr/include/allegro5/clipboard.h
+	"allegro5/base.h"
+	"allegro5/display.h"
+	"allegro5/utf8.h"
+
+1496168758 /usr/include/allegro5/display.h
+	"allegro5/bitmap.h"
+	"allegro5/color.h"
+	"allegro5/events.h"
+
+1455728992 /usr/include/allegro5/events.h
+	"allegro5/altime.h"
+
+1351456157 /usr/include/allegro5/config.h
+	"allegro5/file.h"
+
+1441921812 /usr/include/allegro5/cpu.h
+	"allegro5/base.h"
+
+1488074523 /usr/include/allegro5/debug.h
+	<assert.h>
+	"allegro5/base.h"
+
+1354620434 /usr/include/allegro5/drawing.h
+	"allegro5/color.h"
+
+1281012045 /usr/include/allegro5/error.h
+	"allegro5/base.h"
+
+1281012045 /usr/include/allegro5/fixed.h
+	"allegro5/base.h"
+
+1281012045 /usr/include/allegro5/fmaths.h
+	"allegro5/base.h"
+	"allegro5/fixed.h"
+	"allegro5/inline/fmaths.inl"
+
+1545563050 /usr/include/allegro5/inline/fmaths.inl
+	"allegro5/error.h"
+
+1406018237 /usr/include/allegro5/fshook.h
+	"allegro5/base.h"
+	"allegro5/file.h"
+	"allegro5/path.h"
+	<sys/types.h>
+
+1459716376 /usr/include/allegro5/fullscreen_mode.h
+	"allegro5/base.h"
+
+1457207240 /usr/include/allegro5/haptic.h
+	"allegro5/base.h"
+	"allegro5/display.h"
+	"allegro5/events.h"
+	"allegro5/joystick.h"
+	"allegro5/keyboard.h"
+	"allegro5/mouse.h"
+	"allegro5/touch_input.h"
+
+1354620434 /usr/include/allegro5/joystick.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1486271408 /usr/include/allegro5/keyboard.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+	"allegro5/keycodes.h"
+
+1374892601 /usr/include/allegro5/keycodes.h
+
+1499764357 /usr/include/allegro5/mouse.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1456086987 /usr/include/allegro5/touch_input.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1459716376 /usr/include/allegro5/memory.h
+	"allegro5/base.h"
+
+1529750754 /usr/include/allegro5/monitor.h
+	"allegro5/base.h"
+
+1354620434 /usr/include/allegro5/mouse_cursor.h
+	"allegro5/base.h"
+
+1459716376 /usr/include/allegro5/render_state.h
+	"allegro5/base.h"
+
+1567910812 /usr/include/allegro5/shader.h
+	"allegro5/base.h"
+	"allegro5/transformations.h"
+
+1539653631 /usr/include/allegro5/transformations.h
+	"allegro5/display.h"
+
+1550470301 /usr/include/allegro5/system.h
+	"allegro5/config.h"
+	"allegro5/path.h"
+
+1550470301 /usr/include/allegro5/threads.h
+	"allegro5/altime.h"
+
+1459716376 /usr/include/allegro5/timer.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1440996195 /usr/include/allegro5/tls.h
+	"allegro5/base.h"
+
+1459113855 /usr/include/allegro5/alcompat.h
+
+1575636516 /usr/include/allegro5/allegro_font.h
+	"allegro5/allegro.h"
+
+1575638696 /usr/include/allegro5/allegro_primitives.h
+	<allegro5/allegro.h>
+
+1511125494 /usr/include/allegro5/allegro_color.h
+	"allegro5/allegro.h"
+
+1575636015 /usr/include/allegro5/allegro_image.h
+	"allegro5/base.h"
+
+1575639120 /usr/include/allegro5/allegro_native_dialog.h
+	"allegro5/allegro.h"
+
+1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/has-won/SimpleScreen.h
+	"stdafx.h"
+
+1587311350 source:/home/dbiersach/Desktop/scicomp-labs-cpp/has-won/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
