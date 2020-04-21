@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1535678705 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/riemann-hypothesis/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1535679540 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/riemann-hypothesis/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1535678677 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/riemann-hypothesis/simplescreen.h
+	"stdafx.h"
+

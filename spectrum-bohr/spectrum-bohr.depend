@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1533440411 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/spectrum-bohr/spectrum-bohr.cpp
+	"stdafx.h"
+
+1532843559 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/spectrum-bohr/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<chrono>
+	<cmath>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<locale>
+	<memory>
+	<map>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+

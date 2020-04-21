@@ -1,0 +1,123 @@
+# depslib dependency file v1.0
+1495509428 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/projectile-motion/projectile-motion.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1493068094 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/projectile-motion/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<chrono>
+	<cmath>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<locale>
+	<memory>
+	<map>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1495503422 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/projectile-motion/SimpleScreen.h
+	"stdafx.h"
+
+1495490000 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/projectile-motion/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1532896734 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/projectile-motion.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1536465082 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<TApplication.h>
+	<TCanvas.h>
+	<TColor.h>
+	<TDiamond.h>
+	<TF1.h>
+	<TGraph.h>
+	<TH1D.h>
+	<TH1F.h>
+	<TLegend.h>
+	<TMath.h>
+	<TMultiGraph.h>
+	<TNamed.h>
+	<TRandom3.h>
+	<TString.h>
+	<TStyle.h>
+
+1532896734 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/SimpleScreen.h
+	"stdafx.h"
+
+1532896807 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1536507527 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1536507491 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/simplescreen.h
+	"stdafx.h"
+
+1534564783 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/projectile-motion/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

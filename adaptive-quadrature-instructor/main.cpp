@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// This is the function we are integrating
+// This is the function we are numerically integrating
 double f(double x)
 {
     return 5 * pow(x, 3) - 9 * pow(x, 2) + 11;
@@ -13,7 +13,6 @@ double F(double x)
 {
     return 5 * pow(x, 4) / 4 - 3 * pow(x, 3) + 11 * x;
 }
-
 
 double midpointFixed(double a, double b)
 {
@@ -85,4 +84,3 @@ int main()
 
     return 0;
 }
-

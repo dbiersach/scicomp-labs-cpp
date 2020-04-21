@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1536182054 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/cluster.cpp
+	"cluster.h"
+
+1536182141 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/cluster.h
+	"stdafx.h"
+
+1532895747 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<chrono>
+	<cmath>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<memory>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1536182130 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+	"cluster.h"
+
+1536182288 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/simplescreen.h
+	"stdafx.h"
+
+1536182292 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

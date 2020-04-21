@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1536177816 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/scramble-squares/board.cpp
+	"stdafx.h"
+	"board.h"
+
+1534565305 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/scramble-squares/stdafx.h
+	"targetver.h"
+	<tchar.h>
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<TApplication.h>
+	<TCanvas.h>
+	<TColor.h>
+	<TDiamond.h>
+	<TF1.h>
+	<TGraph.h>
+	<TH1D.h>
+	<TH1F.h>
+	<TLegend.h>
+	<TMath.h>
+	<TMultiGraph.h>
+	<TNamed.h>
+	<TRandom3.h>
+	<TString.h>
+	<TStyle.h>
+
+1536177710 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/scramble-squares/board.h
+	"tile.h"
+
+1536177726 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/scramble-squares/tile.h
+
+1536177738 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/scramble-squares/main.cpp
+	"stdafx.h"
+	"tile.h"
+	"board.h"
+
+1536177746 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/scramble-squares/tile.cpp
+	"stdafx.h"
+	"tile.h"
+

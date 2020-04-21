@@ -9,7 +9,7 @@ int main()
 	double ageInSeconds =
 		ageInYears * 1;
 
-	cout.imbue(locale(""));
+	cout.imbue(std::locale(""));
 	cout << fixed << setprecision(2);
 
 	cout << "Age (years) = "
@@ -19,4 +19,3 @@ int main()
 
     return 0;
 }
-

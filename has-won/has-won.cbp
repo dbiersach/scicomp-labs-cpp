@@ -49,7 +49,7 @@
 		</Linker>
 		<Unit filename="SimpleScreen.cpp" />
 		<Unit filename="SimpleScreen.h" />
-		<Unit filename="has-won.cpp" />
+		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
 		<Extensions>
 			<code_completion />

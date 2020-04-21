@@ -1,0 +1,92 @@
+# depslib dependency file v1.0
+1491011220 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/draw-torus/DrawTorus.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1490488977 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/draw-torus/stdafx.h
+	"targetver.h"
+	<tchar.h>
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<chrono>
+	<cmath>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<memory>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1490488978 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/draw-torus/SimpleScreen.h
+	"stdafx.h"
+
+1490488978 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/draw-torus/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1532895708 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-torus/DrawTorus.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1532895747 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-torus/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<chrono>
+	<cmath>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<memory>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1532896102 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-torus/SimpleScreen.h
+	"stdafx.h"
+
+1532895837 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-torus/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1535678705 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-torus/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1535678677 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-torus/simplescreen.h
+	"stdafx.h"
+

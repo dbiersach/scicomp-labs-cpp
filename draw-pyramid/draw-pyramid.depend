@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1532895837 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-pyramid/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1532895747 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-pyramid/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<chrono>
+	<cmath>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<memory>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1532896102 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-pyramid/SimpleScreen.h
+	"stdafx.h"
+

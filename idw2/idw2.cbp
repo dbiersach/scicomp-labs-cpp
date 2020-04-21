@@ -30,7 +30,7 @@
 		</Build>
 		<Unit filename="SimpleScreen.cpp" />
 		<Unit filename="SimpleScreen.h" />
-		<Unit filename="idw2.cpp" />
+		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
 		<Extensions>
 			<code_completion />
