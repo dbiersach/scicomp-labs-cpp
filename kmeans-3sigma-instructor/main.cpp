@@ -8,6 +8,8 @@ SimpleScreen* ss{};
 vector<DataPoint*>* dataPoints{};
 vector<Cluster*>* clusters{};
 int num_clusters{};
+double mean_multiple{};
+bool converged{};
 
 void InitDataPoints()
 {
@@ -129,6 +131,38 @@ void UpdateClusters()
             }
         }
     }
+
+    // Phase III - Evict points too far from its cluster center
+    if (mean_multiple > 0 && !phase1_change && !phase2_change && !converged) {
+        // Calculate the mean distance from each
+        // cluster's center to each of its assigned points
+        for (auto c : *clusters) {
+            double count_points{};
+            double total_distance{};
+            for (auto dp : *dataPoints){
+                if (dp->c == c) {
+                    total_distance += sqrt(pow(dp->x - c->x, 2) +
+                                       pow(dp->y - c->y, 2));
+                    count_points++;
+                }
+            }
+            c->mean_distance = total_distance / count_points;
+        }
+        // Check the distance of each point to its' cluster center.
+        // If that distance is greater than the "mean_multiple" for
+        // that cluster, then evict (remove) that data point
+        auto dp = dataPoints->begin();
+        while (dp != dataPoints->end())
+        {
+            Cluster* c = (*dp)->c;
+            double dist_center = sqrt(pow((*dp)->x - c->x, 2) +
+                                       pow((*dp)->y - c->y, 2));
+            if (dist_center > c->mean_distance * mean_multiple)
+                dp = (*dataPoints).erase(dp);
+            else dp++;
+        }
+        converged = true;
+    }
 }
 
 int main()
@@ -145,6 +179,8 @@ int main()
     InitClusters();
 
     DrawClusters();
+
+    //mean_multiple = 1;
 
     while (true)
     {

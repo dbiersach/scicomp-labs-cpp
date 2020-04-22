@@ -1,30 +1,38 @@
 # depslib dependency file v1.0
-1536182054 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/cluster.cpp
-	"cluster.h"
-
-1536182141 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/cluster.h
+1525675282 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans/kmeans.cpp
 	"stdafx.h"
+	"SimpleScreen.h"
+	"kMeansClustering.h"
 
-1532895747 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/stdafx.h
+1525675550 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans/stdafx.h
 	<stdio.h>
 	<time.h>
 	<math.h>
 	<algorithm>
 	<array>
+	<assert.h>
+	<atomic>
 	<chrono>
 	<cmath>
+	<complex>
 	<cstdio>
 	<fstream>
 	<functional>
 	<iomanip>
 	<iostream>
 	<iterator>
+	<limits>
+	<locale>
 	<memory>
+	<map>
+	<mutex>
 	<random>
 	<sstream>
 	<string>
 	<thread>
+	<time.h>
 	<tuple>
+	<unordered_map>
 	<utility>
 	<vector>
 	<allegro5/allegro.h>
@@ -32,18 +40,120 @@
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_color.h>
 	<allegro5/color.h>
-	<allegro5/allegro_image.h>
-	<allegro5/allegro_native_dialog.h>
 
-1536182130 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/main.cpp
-	"stdafx.h"
-	"simplescreen.h"
-	"cluster.h"
-
-1536182288 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/simplescreen.h
+1525675212 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans/SimpleScreen.h
 	"stdafx.h"
 
-1536182292 source:/home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/kmeans/simplescreen.cpp
+1525675364 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans/kMeansClustering.h
 	"stdafx.h"
-	"simplescreen.h"
+
+1525675223 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1587533315 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-instructor/main.cpp
+	"SimpleScreen.h"
+	"kMeansClustering.h"
+
+1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-instructor/SimpleScreen.h
+	"stdafx.h"
+
+1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-instructor/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+
+1587535094 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-instructor/kMeansClustering.h
+	"stdafx.h"
+
+1587494540 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-instructor/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1587531084 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-instructor/kMeansClustering.cpp
+	"SimpleScreen.h"
+	"kMeansClustering.h"
+
+1587531084 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/kMeansClustering.cpp
+	"SimpleScreen.h"
+	"kMeansClustering.h"
+
+1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/SimpleScreen.h
+	"stdafx.h"
+
+1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+
+1587536231 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/kMeansClustering.h
+	"stdafx.h"
+
+1587494540 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
 
