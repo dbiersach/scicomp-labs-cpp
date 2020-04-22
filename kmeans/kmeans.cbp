@@ -28,11 +28,11 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Unit filename="SimpleScreen.cpp" />
-		<Unit filename="SimpleScreen.h" />
 		<Unit filename="kMeansClustering.cpp" />
 		<Unit filename="kMeansClustering.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="simplescreen.cpp" />
+		<Unit filename="simplescreen.h" />
 		<Unit filename="stdafx.h" />
 		<Extensions>
 			<code_completion />

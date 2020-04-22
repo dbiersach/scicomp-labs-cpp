@@ -106,14 +106,13 @@
 	"SimpleScreen.h"
 	"kMeansClustering.h"
 
-1587531084 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/kMeansClustering.cpp
-	"SimpleScreen.h"
+1587576398 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/kMeansClustering.cpp
 	"kMeansClustering.h"
 
 1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/SimpleScreen.h
 	"stdafx.h"
 
-1587263534 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/stdafx.h
+1587578733 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/stdafx.h
 	<stdio.h>
 	<time.h>
 	<math.h>
@@ -149,11 +148,24 @@
 	<allegro5/allegro_primitives.h>
 	<allegro5/allegro_color.h>
 	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
 
-1587536231 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/kMeansClustering.h
+1587574028 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/kMeansClustering.h
 	"stdafx.h"
 
 1587494540 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/SimpleScreen.cpp
 	"stdafx.h"
 	"SimpleScreen.h"
+
+1587579100 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/main.cpp
+	"simplescreen.h"
+	"kMeansClustering.h"
+
+1587263548 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/simplescreen.h
+	"stdafx.h"
+
+1587263548 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
 

@@ -37,7 +37,7 @@
 		<Linker>
 			<Add option="-m64" />
 		</Linker>
-		<Unit filename="kinematics-regression.cpp" />
+		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
 		<Extensions>
 			<code_completion />

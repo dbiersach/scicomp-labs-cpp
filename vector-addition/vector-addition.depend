@@ -58,3 +58,38 @@
 	<TString.h>
 	<TStyle.h>
 
+1587482617 source:/home/dbiersach/Desktop/scicomp-labs-cpp/vector-addition/main.cpp
+	"stdafx.h"
+
+1587584921 /home/dbiersach/Desktop/scicomp-labs-cpp/vector-addition/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+

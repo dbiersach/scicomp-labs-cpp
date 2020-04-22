@@ -121,3 +121,53 @@
 	"stdafx.h"
 	"simplescreen.h"
 
+1587263548 source:/home/dbiersach/Desktop/scicomp-labs-cpp/projectile-motion/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1587578579 /home/dbiersach/Desktop/scicomp-labs-cpp/projectile-motion/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1587263548 /home/dbiersach/Desktop/scicomp-labs-cpp/projectile-motion/simplescreen.h
+	"stdafx.h"
+
+1587263548 source:/home/dbiersach/Desktop/scicomp-labs-cpp/projectile-motion/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

@@ -1,5 +1,3 @@
-// stdafx.h
-
 #pragma once
 
 // Standard SciComp headers

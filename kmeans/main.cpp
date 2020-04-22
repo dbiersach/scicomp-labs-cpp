@@ -1,13 +1,20 @@
 ﻿#include "stdafx.h"
-#include "SimpleScreen.h"
+#include "simplescreen.h"
 #include "kMeansClustering.h"
 
 using namespace std;
 
-SimpleScreen* ss{};
+int num_clusters{3};
+double mean_multiple{0};
+
 vector<DataPoint*>* dataPoints{};
 vector<Cluster*>* clusters{};
-int num_clusters{};
+bool converged{};
+
+double GetDistance(double x1, double y1, double x2, double y2 )
+{
+    return sqrt(pow(x1-x2,2) + pow(y1-y2,2));
+}
 
 void InitDataPoints()
 {
@@ -32,11 +39,7 @@ void InitDataPoints()
     dataPoints->push_back(new DataPoint(14, 6));
     dataPoints->push_back(new DataPoint(27, 32));
     dataPoints->push_back(new DataPoint(17, 9));
-}
-
-void IncludeOutlier()
-{
-    dataPoints->push_back(new DataPoint(5, 40));
+    //dataPoints->push_back(new DataPoint(5, 40));
 }
 
 void InitClusters()
@@ -52,19 +55,6 @@ void InitClusters()
         dataPoints->at(i)->c = c;
         c->population++;
     }
-}
-
-void DrawClusters()
-{
-    ss->Clear();
-    ss->DrawAxes();
-    // Draw each data point
-    for (auto dp : *dataPoints)
-        ss->DrawRectangle(dp->c->clr, dp->x, dp->y, 1, 1, 0, true);
-    // Draw each cluster's geometric center (the "mean")
-    for (auto c : *clusters)
-        ss->DrawCircle(c->x, c->y, 1, c->clr, 2);
-    ss->Update();
 }
 
 void UpdateClusters()
@@ -104,15 +94,14 @@ void UpdateClusters()
         Cluster* cNearest = nullptr;
         for (auto c : *clusters)
         {
-            double dist = sqrt(pow(dp->x - c->x, 2) +
-                               pow(dp->y - c->y, 2));
+            double dist = GetDistance(dp->x, dp->y, c->x, c->y);
             if (dist < distMin)
             {
                 distMin = dist;
                 cNearest = c;
             }
         }
-        // If the nearest cluster to this point is not
+        // If the nearest cluster to this point is NOT
         // the point's currently assigned cluster...
         if (cNearest != dp->c)
         {
@@ -129,42 +118,88 @@ void UpdateClusters()
             }
         }
     }
+
+    // Phase III - Evict points too far from its cluster center
+    if (mean_multiple > 0 && !phase1_change && !phase2_change && !converged)
+    {
+        // Calculate the mean distance from each
+        // cluster's center to each of its assigned points
+        for (auto c : *clusters)
+        {
+            double count_points{};
+            double total_distance{};
+            for (auto dp : *dataPoints)
+            {
+                if (dp->c == c)
+                {
+                    total_distance += GetDistance(dp->x, dp->y, c->x, c->y);
+                    count_points++;
+                }
+            }
+            c->mean_distance = total_distance / count_points;
+        }
+        // Check the distance of each point to its' cluster center.
+        // If that distance is greater than the "mean_multiple" for
+        // that cluster, then evict (remove) that data point
+        auto itr = dataPoints->begin();
+        while (itr != dataPoints->end())
+        {
+            DataPoint* dp = *itr;
+            Cluster* c = dp->c;
+            double dist_center = GetDistance(dp->x, dp->y, c->x, c->y);
+
+            if (dist_center > c->mean_distance * mean_multiple)
+                itr = (*dataPoints).erase(itr);
+            else
+                itr++;
+        }
+        converged = true;
+    }
+}
+
+void draw(SimpleScreen& ss)
+{
+    ss.Clear();
+    ss.DrawAxes();
+    // Draw each data point
+    for (auto dp : *dataPoints)
+        ss.DrawRectangle(dp->c->clr, dp->x, dp->y, 1, 1, 0, true);
+    // Draw each cluster's geometric center (the "mean")
+    for (auto c : *clusters)
+        ss.DrawCircle(c->x, c->y, 1, c->clr, 2);
+    ss.Update();
+}
+
+void eventHandler(SimpleScreen& ss, ALLEGRO_EVENT& ev)
+{
+    if (ev.type == ALLEGRO_EVENT_KEY_CHAR)
+    {
+        switch (ev.keyboard.keycode)
+        {
+        case ALLEGRO_KEY_S:
+            UpdateClusters();
+            ss.Redraw();
+            break;
+        case ALLEGRO_KEY_Q:
+            ss.Exit();
+            break;
+        }
+    }
 }
 
 int main()
 {
-    ss = new SimpleScreen();
-    ss->SetWorldRect(-5, -5, 45, 45);
+    SimpleScreen ss(draw, eventHandler);
+    ss.SetWorldRect(-5, -5, 45, 45);
+
+    cout << "Press S to single step the cluster algorithm\n";
+    cout << "Press Q to quit the application\n";
 
     InitDataPoints();
 
-    //IncludeOutlier();
-
-    num_clusters = 3;
-
     InitClusters();
 
-    DrawClusters();
-
-    while (true)
-    {
-        ALLEGRO_EVENT ev = ss->Wait();
-        if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
-            break;
-
-        if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN) {
-            UpdateClusters();
-            DrawClusters();
-        }
-    }
-
-    delete ss;
-
-    clusters->clear();
-    delete clusters;
-
-    dataPoints->clear();
-    delete dataPoints;
+    ss.HandleEvents();
 
     return 0;
 }

@@ -1,0 +1,116 @@
+# depslib dependency file v1.0
+1525675282 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans-eviction/kmeans-eviction.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+	"kMeansClustering.h"
+
+1525675550 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans-eviction/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+
+1525675212 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans-eviction/SimpleScreen.h
+	"stdafx.h"
+
+1525675364 /home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans-eviction/kMeansClustering.h
+	"stdafx.h"
+
+1525675223 source:/home/dbiersach/Desktop/scicomp-labs-cpp-linux/kmeans-eviction/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1587581451 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/main.cpp
+	"simplescreen.h"
+	"kMeansClustering.h"
+
+1587573460 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/SimpleScreen.h
+	"stdafx.h"
+
+1587578733 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/stdafx.h
+	<stdio.h>
+	<time.h>
+	<math.h>
+	<algorithm>
+	<array>
+	<assert.h>
+	<atomic>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<memory>
+	<map>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<time.h>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/allegro_color.h>
+	<allegro5/color.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+
+1587574028 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/kMeansClustering.h
+	"stdafx.h"
+
+1587494540 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1587576398 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/kMeansClustering.cpp
+	"kMeansClustering.h"
+
+1587263548 /home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/simplescreen.h
+	"stdafx.h"
+
+1587263548 source:/home/dbiersach/Desktop/scicomp-labs-cpp/kmeans-eviction-instructor/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
