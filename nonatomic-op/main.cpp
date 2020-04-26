@@ -1,3 +1,5 @@
+// nonatomic-op.cpp
+
 #include "stdafx.h"
 
 using namespace std;
@@ -31,8 +33,8 @@ int main()
         for (auto& t : threadPool)
             t.join();
         cout << "Run " << i << ": "
-            << "Counter = " << (int)g_counter
-            << endl;
+             << "Counter = " << (int)g_counter
+             << endl;
     }
     return 0;
 }

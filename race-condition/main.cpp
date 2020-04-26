@@ -5,19 +5,24 @@ using namespace std;
 std::atomic<int> g_counter{};
 std::atomic<bool> g_won{false};
 
-void func(string name) {
-	while(g_counter > 0) {
+void func(string name)
+{
+    while(g_counter > 0)
+    {
         g_counter--;
         std::this_thread::sleep_for(1us);
     }
-    if (!g_won) {
+    if (!g_won)
+    {
         g_won = true;
         cout << name << " wins!" << endl;
     }
 }
 
-int main() {
-    for (int run{}; run < 10; run++) {
+int main()
+{
+    for (int run{}; run < 10; run++)
+    {
         cout << "Race " << run << ": ";
         g_counter = 20000;
         g_won = false;
@@ -28,5 +33,5 @@ int main() {
         t1.join();
         t2.join();
     }
-	return 0;
+    return 0;
 }

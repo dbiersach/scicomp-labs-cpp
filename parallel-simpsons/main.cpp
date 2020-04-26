@@ -2,6 +2,14 @@
 
 using namespace std;
 
+struct TCB {
+    std::thread* t = nullptr;
+    double a{};
+    double b{};
+    long intervals{};
+    double integral{};
+};
+
 // We want to integrate the unit circle
 // in the first quadrant from 0 to 1
 double g_a{0.0};
@@ -11,14 +19,6 @@ inline double f(double x)
 {
     return sqrt(1 - pow(x, 2));
 }
-
-struct TCB {
-    std::thread* t = nullptr;
-    double a{};
-    double b{};
-    long intervals{};
-    double integral{};
-};
 
 void simpsons(TCB* tcb)
 {
