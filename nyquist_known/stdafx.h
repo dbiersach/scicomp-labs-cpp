@@ -1,6 +1,5 @@
 #pragma once
 
-// Standard SciComp headers
 #include <stdio.h>
 #include <time.h>
 #define _USE_MATH_DEFINES
@@ -32,3 +31,15 @@
 #include <unordered_map>
 #include <utility>
 #include <vector>
+
+#include <allegro5/allegro.h>
+#include <allegro5/allegro_font.h>
+#include <allegro5/allegro_primitives.h>
+#include <allegro5/allegro_color.h>
+#include <allegro5/color.h>
+#include <allegro5/allegro_image.h>
+#include <allegro5/allegro_native_dialog.h>
+
+#include <boost/algorithm/string.hpp>
+#include <boost/range/algorithm_ext/erase.hpp>
+#include <boost/timer.hpp>

@@ -39,3 +39,7 @@
 #include <allegro5/color.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_native_dialog.h>
+
+#include <boost/algorithm/string.hpp>
+#include <boost/range/algorithm_ext/erase.hpp>
+#include <boost/timer.hpp>
