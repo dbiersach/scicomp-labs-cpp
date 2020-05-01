@@ -15,7 +15,8 @@ int main()
 	cout << "Age (years) = "
 		<< ageInYears << endl;
 
-	cout << "Age (secs) = ";
+	cout << "Age (secs) = "
+        << endl;
 
     return 0;
 }
