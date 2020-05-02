@@ -23,6 +23,9 @@ int main()
 
         estimate = (highEnd + lowEnd) / 2;
         estimateSquared = pow(estimate, 2);
+
+        if (highEnd == lowEnd)
+            break;
     }
 
     cout << "Estimated Square Root of "

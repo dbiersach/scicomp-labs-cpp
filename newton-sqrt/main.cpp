@@ -1,5 +1,3 @@
-// newton-sqrt.cpp
-
 #include "stdafx.h"
 
 using namespace std;
@@ -19,12 +17,15 @@ int main()
     while (abs(estimateSquared - x) > epsilon)
     {
         if (estimateSquared > x)
-            highEnd =
-                else
-                    lowEnd =
+            highEnd = 0;
+        else
+            lowEnd = 0;
 
-                        estimate = (highEnd + lowEnd) / 2;
+        estimate = (highEnd + lowEnd) / 2;
         estimateSquared = pow(estimate, 2);
+
+        if (highEnd == lowEnd)
+            break;
     }
 
     cout << "Estimated Square Root of "
