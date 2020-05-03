@@ -70,16 +70,17 @@ int main()
          << samples->size() << " random integers..."
          << endl;
 
-    auto startTime = system_clock::now();
+    auto startTime = steady_clock::now();
 
     int numPrimes = CountPrimes(samples);
 
-    auto stopTime = system_clock::now();
+    auto endTime = steady_clock::now();
 
-    auto totalTime = duration_cast<milliseconds>(stopTime - startTime);
+    auto totalTime = duration_cast<milliseconds>
+                     (endTime - startTime).count();
 
     cout << "Number of Primes: " << numPrimes << endl;
-    cout << "Total run time (ms): " << totalTime.count() << endl;
+    cout << "Total run time (ms): " << totalTime << endl;
 
     return 0;
 }

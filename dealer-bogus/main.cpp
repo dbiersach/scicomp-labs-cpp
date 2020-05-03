@@ -22,13 +22,13 @@ void DealCards(vector<int>& deck)
 void DisplayCards(vector<int>& deck)
 {
     const vector<string> suit{ "Clubs", "Diamonds",
-        "Hearts", "Spades" };
+                               "Hearts", "Spades" };
 
     const vector<string> rank{ "Deuce", "Three", "Four",
-        "Five", "Six", "Seven",
-        "Eight", "Nine", "Ten",
-        "Jack", "Queen", "King",
-        "Ace" };
+                               "Five", "Six", "Seven",
+                               "Eight", "Nine", "Ten",
+                               "Jack", "Queen", "King",
+                               "Ace" };
 
     for (size_t i{}; i < deck.size(); ++i)
     {

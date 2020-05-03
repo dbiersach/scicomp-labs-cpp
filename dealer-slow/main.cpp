@@ -22,13 +22,13 @@ void DealCards(vector<int>& deck)
 void DisplayCards(vector<int>& deck)
 {
     const vector<string> suit{ "Clubs", "Diamonds",
-        "Hearts", "Spades" };
+                               "Hearts", "Spades" };
 
     const vector<string> rank{ "Deuce", "Three", "Four",
-        "Five", "Six", "Seven",
-        "Eight", "Nine", "Ten",
-        "Jack", "Queen", "King",
-        "Ace" };
+                               "Five", "Six", "Seven",
+                               "Eight", "Nine", "Ten",
+                               "Jack", "Queen", "King",
+                               "Ace" };
 
     for (size_t i{}; i < deck.size(); ++i)
     {
@@ -45,7 +45,7 @@ int main()
 
     const int maxDeal{ 10000 };
 
-    clock_t startTime{ clock() };
+    auto startTime = chrono::steady_clock::now();
 
     for (int deal{}; deal < maxDeal; ++deal)
     {
@@ -53,12 +53,12 @@ int main()
         DealCards(deck);
     }
 
-    clock_t stopTime{ clock() };
+    auto endTime = chrono::steady_clock::now();
 
     DisplayCards(deck);
 
-    double totalTime{ ((double)(stopTime - startTime)
-                       / CLOCKS_PER_SEC) * 1000 };
+    auto totalTime = chrono::duration_cast<chrono::milliseconds>
+                     (endTime - startTime).count();
 
     cout.imbue(std::locale(""));
     cout << "Total deals: " << maxDeal << endl;
