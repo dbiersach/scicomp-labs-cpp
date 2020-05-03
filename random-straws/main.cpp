@@ -6,7 +6,6 @@ seed_seq seed{ 2016 };
 default_random_engine generator{ seed };
 uniform_real_distribution<double> distribution(0.0, 1.0);
 
-
 int main()
 {
     double maxIterations = 10000000;

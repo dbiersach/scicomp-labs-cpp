@@ -51,7 +51,7 @@ int main()
              << setw(12) << setSize
              << setw(12) << setprecision(3) << mean
              << setw(13) << setprecision(3) << variance
-             << setw(8) << setprecision(0) << magicNumber
+             << setw(8) << setprecision(3) << magicNumber
              << endl;
     }
 

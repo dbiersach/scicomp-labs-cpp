@@ -82,8 +82,10 @@ void draw(SimpleScreen& ss)
 
 void eventHandler(SimpleScreen& ss, ALLEGRO_EVENT& ev)
 {
-    if (ev.type == ALLEGRO_EVENT_KEY_CHAR) {
-        if (ev.keyboard.keycode == ALLEGRO_KEY_N) {
+    if (ev.type == ALLEGRO_EVENT_KEY_CHAR)
+    {
+        if (ev.keyboard.keycode == ALLEGRO_KEY_N)
+        {
             CreateTriangle();
             ss.Clear();
             ss.Redraw();
