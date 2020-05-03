@@ -73,3 +73,53 @@
 1534564768 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/draw-rectangle/simplescreen.h
 	"stdafx.h"
 
+1588471224 source:/home/scicompuser1/scicomp-labs-cpp/draw-rectangle/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1588471224 /home/scicompuser1/scicomp-labs-cpp/draw-rectangle/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1588363505 /home/scicompuser1/scicomp-labs-cpp/draw-rectangle/simplescreen.h
+	"stdafx.h"
+
+1588363505 source:/home/scicompuser1/scicomp-labs-cpp/draw-rectangle/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
