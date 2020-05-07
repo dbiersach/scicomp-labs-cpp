@@ -1,0 +1,58 @@
+# depslib dependency file v1.0
+1588885333 source:/home/scicompuser1/Desktop/scicomp301/session20/lab2/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+	"niederreiter.h"
+
+1588885663 /home/scicompuser1/Desktop/scicomp301/session20/lab2/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1588885333 /home/scicompuser1/Desktop/scicomp301/session20/lab2/simplescreen.h
+	"stdafx.h"
+
+1588885333 /home/scicompuser1/Desktop/scicomp301/session20/lab2/niederreiter.h
+
+1588885333 source:/home/scicompuser1/Desktop/scicomp301/session20/lab2/niederreiter.cpp
+	"stdafx.h"
+	"niederreiter.h"
+
+1588885333 source:/home/scicompuser1/Desktop/scicomp301/session20/lab2/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
