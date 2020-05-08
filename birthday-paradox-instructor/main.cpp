@@ -10,34 +10,31 @@ int main()
 
     for (int students = 2; students <= 80; students++)
     {
-        int totalIterations = 10000;
+        vector<int> birthdays(students);
+
         int matchCount = 0;
 
-        vector<int>* birthdays = new vector<int>(students, 0);
-
-        for (int iteration = 0; iteration < totalIterations; iteration++)
+        for (int classNum = 0; classNum < 10000; classNum++)
         {
             // Initialize the birthdays array with a random day between 0 and 364
-            for (int i = 0; i < birthdays->size(); i++)
-                birthdays->at(i) = distribution(generator);
+            for (int i = 0; i < birthdays.size(); i++)
+                birthdays.at(i) = distribution(generator);
 
             // Compare birthdays of each person to the remaining people
             // Note:  Only loop until the first match is found
             bool foundMatch = false;
-            for (int j{}; !foundMatch && j < birthdays->size() - 1; j++)
-                for (int k{ j + 1 }; !foundMatch && k < birthdays->size(); k++)
-                    if (birthdays->at(j) == birthdays->at(k))
+            for (int j{}; !foundMatch && j < birthdays.size() - 1; j++)
+                for (int k{ j + 1 }; !foundMatch && k < birthdays.size(); k++)
+                    if (birthdays.at(j) == birthdays.at(k))
                         foundMatch = true;
 
             if (foundMatch)
                 matchCount++;
         }
 
-        delete birthdays;
-
         cout << "Probability of matching birthdays among "
              << setw(2) << students << " people = "
-             << fixed << setprecision(4) << (double)matchCount / totalIterations
+             << fixed << setprecision(4) << (double)matchCount / 10000
              << endl;
     }
 
