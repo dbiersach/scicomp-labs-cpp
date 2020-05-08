@@ -9,7 +9,7 @@ int main()
     int sum = 0;
 
     for (int n = 1; n < termsMax; n++)
-        if (n % 7 == 0 && n % 11 == 0)
+        if ((n % 7 == 0) && (n % 11 == 0))
             sum += n;
 
     cout.imbue(locale(""));

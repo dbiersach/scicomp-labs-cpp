@@ -62,22 +62,33 @@ int main()
     default_random_engine generator{ seed };
     uniform_int_distribution<> distribution(1, 10);
 
-    vector<int> nums(100000);
-    for (auto& n : nums)
-        n = distribution(generator);
+    vector<int> nums(100000,5);
 
-    clock_t startTime{ clock() };
+    for(size_t i{}; i < 20; i++)
+        nums.at(i) = distribution(generator);
+
+    auto startTime = chrono::steady_clock::now();
 
     Quicksort(nums);
 
-    clock_t stopTime{ clock() };
+    auto endTime = chrono::steady_clock::now();
 
-    double totalTime{ ((double)(stopTime - startTime)
-                       / CLOCKS_PER_SEC) * 1000 };
+    auto totalTime = duration_cast<chrono::milliseconds>
+                     (endTime - startTime).count();
 
     cout.imbue(std::locale(""));
     cout << "Total run time (ms): "
          << totalTime << endl;
+
+    cout << endl << "First twenty elements:" << endl;
+    for(int i=0; i < 20; i++)
+        cout << nums.at(i) << " ";
+    cout << endl;
+
+    cout << endl << "Last twenty elements:" << endl;
+    for(int i=20; i > 0; i--)
+        cout << nums.at(nums.size()-i) << " ";
+    cout << endl;
 
     return 0;
 }
