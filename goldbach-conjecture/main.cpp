@@ -9,7 +9,7 @@ vector<int> GeneratePrimes(size_t numPrimes)
     primes.push_back(2);
 
     int n = 3;
-    while (primes.size() < numPrimes)
+    while (primes.size() <= numPrimes)
     {
         int r = 0;
         for (int p : primes)
