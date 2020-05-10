@@ -8,7 +8,7 @@ int main()
 
     complex<double> ez(1, 0);
 
-    uint64_t fact = 1;
+    uintmax_t fact = 1;
 
     for (int p = 1; p < 21; p = p + 1)
     {

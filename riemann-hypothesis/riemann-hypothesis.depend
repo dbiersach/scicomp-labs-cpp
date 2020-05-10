@@ -45,3 +45,53 @@
 1535678677 /home/scicompuser/Desktop/scicomp-labs-cpp-linux-clang/riemann-hypothesis/simplescreen.h
 	"stdafx.h"
 
+1588987279 source:/home/scicompuser1/scicomp-labs-cpp/riemann-hypothesis/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1588987279 /home/scicompuser1/scicomp-labs-cpp/riemann-hypothesis/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1588987279 /home/scicompuser1/scicomp-labs-cpp/riemann-hypothesis/simplescreen.h
+	"stdafx.h"
+
+1588987279 source:/home/scicompuser1/scicomp-labs-cpp/riemann-hypothesis/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

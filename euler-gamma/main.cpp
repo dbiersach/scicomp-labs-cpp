@@ -9,7 +9,7 @@ PointSet psGamma;
 inline double f(double x, double n)
 {
     // Euler's Gamma Function
-    return 0 * pow(x,n-1) * exp(-x);
+    return 1 * pow(x,n-1) * exp(-x);
 }
 
 double simpsons(double n)
