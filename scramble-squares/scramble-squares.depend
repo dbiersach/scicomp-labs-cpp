@@ -73,3 +73,60 @@
 	"stdafx.h"
 	"tile.h"
 
+1589639281 source:/home/scicompuser2/scicomp-labs-cpp/scramble-squares/board.cpp
+	"stdafx.h"
+	"board.h"
+
+1589639281 /home/scicompuser2/scicomp-labs-cpp/scramble-squares/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1589639281 /home/scicompuser2/scicomp-labs-cpp/scramble-squares/board.h
+	"tile.h"
+
+1589639281 /home/scicompuser2/scicomp-labs-cpp/scramble-squares/tile.h
+
+1589639281 source:/home/scicompuser2/scicomp-labs-cpp/scramble-squares/main.cpp
+	"stdafx.h"
+	"tile.h"
+	"board.h"
+
+1589639281 source:/home/scicompuser2/scicomp-labs-cpp/scramble-squares/tile.cpp
+	"stdafx.h"
+	"tile.h"
+

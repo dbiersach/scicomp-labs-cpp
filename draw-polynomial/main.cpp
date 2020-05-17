@@ -7,7 +7,7 @@ void draw(SimpleScreen& ss)
 {
     ss.DrawAxes();
 
-    double x= ss.worldXmin ;
+    double x = ss.worldXmin ;
     const double dx = ss.worldWidth / 97;
 
     PointSet ps;

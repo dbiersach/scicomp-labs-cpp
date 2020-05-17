@@ -1,13 +1,9 @@
-// SimpleScreen.h
-
 #pragma once
 
 #include "stdafx.h"
 
 using std::string;
 using std::vector;
-
-
 
 // Point 2D
 class Point2D

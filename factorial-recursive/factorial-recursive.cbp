@@ -28,14 +28,8 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Compiler>
-			<Add option="-Weverything" />
-			<Add option="-fexceptions" />
-		</Compiler>
 		<Unit filename="main.cpp" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Unit filename="stdafx.h" />
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
