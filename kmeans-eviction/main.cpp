@@ -40,7 +40,7 @@ void InitDataPoints()
     dataPoints->push_back(new DataPoint(14, 6));
     dataPoints->push_back(new DataPoint(27, 32));
     dataPoints->push_back(new DataPoint(17, 9));
-    //dataPoints->push_back(new DataPoint(5, 40));
+    dataPoints->push_back(new DataPoint(5, 40));
 }
 
 void InitClusters()
@@ -120,6 +120,11 @@ void UpdateClusters()
         }
     }
 
+    if (mean_multiple == 0 && !phase1_change && !phase2_change && !converged)
+    {
+        converged = true;
+    }
+
     // Phase III - Evict points too far from its cluster center
     if (mean_multiple > 0 && !phase1_change && !phase2_change && !converged)
     {
@@ -142,19 +147,21 @@ void UpdateClusters()
         // Check the distance of each point to its' cluster center.
         // If that distance is greater than the "mean_multiple" for
         // that cluster, then evict (remove) that data point
+        converged = true;
         auto itr = dataPoints->begin();
         while (itr != dataPoints->end())
         {
             DataPoint* dp = *itr;
             Cluster* c = dp->c;
             double dist_center = GetDistance(dp->x, dp->y, c->x, c->y);
-
             if (dist_center > c->mean_distance * mean_multiple)
+            {
                 itr = (*dataPoints).erase(itr);
+                converged = false;
+            }
             else
                 itr++;
         }
-        converged = true;
     }
 }
 
@@ -180,6 +187,8 @@ void eventHandler(SimpleScreen& ss, ALLEGRO_EVENT& ev)
         case ALLEGRO_KEY_S:
             UpdateClusters();
             ss.Redraw();
+            if (converged)
+                cout << "Cluster has converged" << endl;
             break;
         case ALLEGRO_KEY_Q:
             ss.Exit();
