@@ -120,22 +120,17 @@ int main(int argc, char *argv[])
 
     LoadSequence();
 
-    clock_t startTime{ clock() };
+    boost::timer timer;
 
     string longest = lrss(*seq);
-
-    clock_t stopTime{ clock() };
 
     cout << "The longest repeated substring in "
          << "\"" << filename << "\" is: "
          << longest << endl << endl;
 
-    double totalTime{ ((double)(stopTime - startTime)
-                       / CLOCKS_PER_SEC) * 1000 };
-
     cout.imbue(std::locale(""));
-    cout << "Total run time (ms): "
-         << totalTime << endl;
+    cout << "Total run time: "
+         << timer.elapsed() << "s" << endl;
 
     CloseDataFile();
 

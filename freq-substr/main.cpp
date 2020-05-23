@@ -147,7 +147,6 @@ void WriteFreq(vector<pair<string, int>>& list, int len,
         });
     }
 
-    //size_t range = list.size() > limit ? limit : list.size();
     list.size() > limit ? limit : list.size();
     for (size_t row{}; row < limit; ++row)
     {
