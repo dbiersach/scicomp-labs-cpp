@@ -35,7 +35,7 @@ void decay_carbon14()
 
     // Graph the decay curve using CERN's ROOT libraries
     TCanvas *c1 = new TCanvas("Fluorine-18 Tau Graph");
-    c1->SetTitle("Lab 1 - Nuclear Decay");
+    c1->SetTitle("Lab 3 - Nuclear Decay");
 
     TGraph *g1 = new TGraph(timeSteps, time.data(), nuclei.data());
 
