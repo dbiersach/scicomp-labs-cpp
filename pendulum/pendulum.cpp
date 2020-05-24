@@ -31,7 +31,7 @@ void pendulum()
 	for (int step{}; step < timeSteps - 1; ++step)
 	{
 		omega.at(step + 1) = omega.at(step) - phaseConstant * theta.at(step) * deltaTime;
-		theta.at(step + 1) = theta.at(step) + omega.step(step) * deltaTime;
+		theta.at(step + 1) = theta.at(step) + omega.at(step) * deltaTime;
 		time.at(step + 1) = time.at(step) + deltaTime;
 	}
 
