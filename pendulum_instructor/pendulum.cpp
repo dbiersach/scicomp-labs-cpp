@@ -11,24 +11,21 @@ void pendulum()
 	// Set number of time steps in simulation
 	const int timeSteps{250};
 
-	vector<double> time(timeSteps,0);
-	vector<double> omega(timeSteps,0);
-	vector<double> theta(timeSteps,0);
-	
-	// Set initial pendulum angular velocity
-	omega.at(0) = 0.0;
-
-	// Set initial pendulum displacement
-	theta.at(0) = M_PI / 18.0;
-
 	// Duration of simulation (secs)
 	const double endTime{10};
 
 	// Calculate time step (delta t)
 	const double deltaTime{endTime / timeSteps};
 
-	// Set initial time
-	timeAt.at(0) = 0.0;
+	vector<double> time(timeSteps,0);
+	vector<double> omega(timeSteps,0);
+	vector<double> theta(timeSteps,0);
+
+	// Set initial pendulum angular velocity
+	omega.at(0) = 0.0;
+
+	// Set initial pendulum displacement
+	theta.at(0) = M_PI / 18.0;
 
 	// Perform Euler method to estimate differential equation
 	for (int step{}; step < timeSteps - 1; ++step)
