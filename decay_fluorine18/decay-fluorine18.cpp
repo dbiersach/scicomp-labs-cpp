@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void decay_flourine18()
+void decay_fluorine18()
 {
     // Half-life of Fluorine-18 (secs to hours)
     const double halfLife{6586.0 / 60 / 60};
