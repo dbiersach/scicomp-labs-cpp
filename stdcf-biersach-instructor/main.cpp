@@ -2,19 +2,31 @@
 
 using namespace std;
 
-string EncodeCF(double x)
+vector<int> EncodeCF(double x)
 {
-    const int maxTerms = 7;
-    string cf{to_string(int(x)) + "," };
-    x = x - int(x);
-    for (int terms = 1; terms < maxTerms; terms++)
+    vector<int> terms;
+    while(terms.size() < 7)
     {
-        cf += to_string((int)(1 / x));
-        if (terms < maxTerms - 1)
-            cf += ",";
-        x = 1 / x - (int)(1 / x);
+        terms.push_back(floor(x));
+        x = x - floor(x);
+        if (x < 1e-9) break;
+        x = 1/x;
     }
-    return cf;
+    return terms;
+}
+
+void DisplayCF(vector<int> terms)
+{
+    cout << "{";
+    auto itr = terms.begin();
+    while (true)
+    {
+        cout << *itr;
+        if (++itr == terms.end()) break;
+        cout << ", ";
+    }
+    cout << "}\n";
+    return;
 }
 
 int main()
@@ -22,7 +34,7 @@ int main()
     for (int n{ 1 }; n < 10; n++)
     {
         double x = (sqrt(4 * n*n - 4 * n + 5) + 1) / 2;
-        cout << EncodeCF(x) << endl;
+        DisplayCF(EncodeCF(x));
     }
     return 0;
 }

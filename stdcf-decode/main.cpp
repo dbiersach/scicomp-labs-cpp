@@ -6,7 +6,7 @@ int main()
 {
     int maxTerms = 20;
 
-    vector<int> cf;
+    vector<int> cf{};
 
     vector<double> h(maxTerms + 2);
     vector<double> k(maxTerms + 2);

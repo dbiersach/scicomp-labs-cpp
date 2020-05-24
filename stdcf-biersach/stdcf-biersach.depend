@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1589079323 source:/home/scicompuser1/scicomp-labs-cpp/stdcf-decode-instructor/main.cpp
+1590285399 source:/home/scicompuser2/scicomp-labs-cpp/stdcf-biersach-instructor/main.cpp
 	"stdafx.h"
 
-1589079323 /home/scicompuser1/scicomp-labs-cpp/stdcf-decode-instructor/stdafx.h
+1590253218 /home/scicompuser2/scicomp-labs-cpp/stdcf-biersach-instructor/stdafx.h
 	<algorithm>
 	<array>
 	<atomic>
@@ -41,10 +41,10 @@
 	<boost/range/algorithm_ext/erase.hpp>
 	<boost/timer.hpp>
 
-1590285572 source:/home/scicompuser2/scicomp-labs-cpp/stdcf-decode/main.cpp
+1590285930 source:/home/scicompuser2/scicomp-labs-cpp/stdcf-biersach/main.cpp
 	"stdafx.h"
 
-1590253218 /home/scicompuser2/scicomp-labs-cpp/stdcf-decode/stdafx.h
+1590253218 /home/scicompuser2/scicomp-labs-cpp/stdcf-biersach/stdafx.h
 	<algorithm>
 	<array>
 	<atomic>

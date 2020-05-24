@@ -5,14 +5,9 @@ using namespace chrono;
 
 vector<int> primes{ 2,3 };
 
-void FindPrimesUnder(int limit)
+int PrimeCountingFunction(int x)
 {
-    int n = primes.back() + 2;
-    while (n < limit)
-    {
-        // Add your code here
-        n += 2;
-    }
+    // Add your code here
 }
 
 int main()
@@ -20,19 +15,16 @@ int main()
     cout.imbue(locale(""));
     cout << right;
 
-    auto startTime = system_clock::now();
+    boost::timer timer;
 
     for (int i{ 1 }; i <= 6; i++)
     {
-        FindPrimesUnder((int)pow(10, i));
-        cout << "10^" << to_string(i) << " ="
-             << setw(7) << primes.size() << endl;
+        cout << "10^" << to_string(i) << " =" << setw(7);
+        cout << PrimeCountingFunction((int)pow(10, i)) << endl;
     }
 
-    auto stopTime = system_clock::now();
-
-    auto totalTime = duration_cast<milliseconds>(stopTime - startTime);
-    cout << endl << "Run time (ms): " << totalTime.count() << endl;
+    cout << endl << "Run time: "
+         << timer.elapsed() << "s" << endl;
 
     return 0;
 }

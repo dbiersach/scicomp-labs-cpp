@@ -12,9 +12,7 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-Wall" />
 					<Add option="-g" />
-					<Add option="-std=c++14" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -23,25 +21,15 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-O4" />
-					<Add option="-Wall" />
-					<Add option="-std=c++14" />
+					<Add option="-O3" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 				</Linker>
 			</Target>
 		</Build>
-		<Compiler>
-			<Add option="-Wall" />
-			<Add option="-std=c++14" />
-			<Add option="-fexceptions" />
-		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

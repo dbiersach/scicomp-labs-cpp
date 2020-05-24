@@ -97,8 +97,6 @@ int main()
     const matrix2D coeffMatrix{ {1,0},{0,-1} };
     const matrix1D valueVector{ -1,1 };
 
-    cout << fixed << setprecision(0);
-
     DisplayEquations(coeffMatrix, valueVector);
 
     double detCoeff{};
