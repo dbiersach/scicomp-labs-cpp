@@ -39,7 +39,7 @@ void decay_carbon14()
 
     TGraph *g1 = new TGraph(timeSteps, time.data(), nuclei.data());
 
-    g1->SetTitle("Radioactive Decay of Carbon-14;time (h);% of Original Amount");
+    g1->SetTitle("Radioactive Decay of Carbon-14;time (yrs);% of Original Amount");
     g1->SetMarkerStyle(kFullDotMedium);
     g1->SetLineColor(2);
     g1->Draw();
