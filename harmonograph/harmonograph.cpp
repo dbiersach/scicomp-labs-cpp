@@ -22,9 +22,9 @@ void harmonograph()
     omega1.at(0) = 0.0;         // (rads/s)
 
     // Set second pendulum initial conditions
-    const double length2 = 1.0; // (m)
+    const double length2 = 1.5; // (m)
     theta2.at(0) = M_PI / 18.0; // (~10 degrees)
-    omega2.at(0) = 1.0;         // (rads/s)
+    omega2.at(0) = 0.0;         // (rads/s)
 
     const double phaseConstant1 = g / length1;
     const double phaseConstant2 = g / length2;
