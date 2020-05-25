@@ -19,7 +19,7 @@ void harmonograph()
     // Define first pendulum
     const double length1 = 1.0; // (m)
     theta1.at(0) = 1.0;         // (rads)
-    omega1.at(0) = 1.0;         // (rads/s)
+    omega1.at(0) = 0.0;         // (rads/s)
 
     // Define second pendulum
     const double length2 = 1.5; // (m)
