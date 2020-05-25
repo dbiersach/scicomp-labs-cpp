@@ -9,24 +9,24 @@ void harmonograph()
     const int timeSteps{2500};
     const double endTime{10};
     const double deltaTime{endTime / timeSteps};
-    
-	vector<double> time(timeSteps,0);
-	vector<double> omega1(timeSteps,0);
-	vector<double> theta1(timeSteps,0);
-	vector<double> omega2(timeSteps,0);
-	vector<double> theta2(timeSteps,0);
 
-    // Define first pendulum
+    vector<double> time(timeSteps, 0);
+    vector<double> omega1(timeSteps, 0);
+    vector<double> theta1(timeSteps, 0);
+    vector<double> omega2(timeSteps, 0);
+    vector<double> theta2(timeSteps, 0);
+
+    // Set first pendulum initial conditions
     const double length1 = 1.0; // (m)
-    theta1.at(0) = 1.0;         // (rads)
+    theta1.at(0) = M_PI / 18.0; // (~10 degrees)
     omega1.at(0) = 0.0;         // (rads/s)
 
-    // Define second pendulum
-    const double length2 = 1.5; // (m)
-    theta2.at(0) = 1.0;         // (rads)
-    omega2.at(0) = 0.0;         // (rads/s)
+    // Set second pendulum initial conditions
+    const double length2 = 1.0; // (m)
+    theta2.at(0) = M_PI / 18.0; // (~10 degrees)
+    omega2.at(0) = 1.0;         // (rads/s)
 
-    const double phaseConstant1 = g / length1;    
+    const double phaseConstant1 = g / length1;
     const double phaseConstant2 = g / length2;
 
     // Perform Euler-Cromer method to estimate differential equation
