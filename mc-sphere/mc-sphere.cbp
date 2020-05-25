@@ -28,35 +28,12 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Compiler>
-			<Add option="-Wall" />
-			<Add option="-fexceptions" />
-			<Add directory="/usr/include/allegro5" />
-		</Compiler>
-		<Linker>
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_acodec.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_audio.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_color.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_dialog.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_font.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_image.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_main.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_memfile.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_physfs.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_primitives.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_ttf.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_video.so" />
-		</Linker>
 		<Unit filename="main.cpp" />
 		<Unit filename="niederreiter.cpp" />
 		<Unit filename="niederreiter.h" />
 		<Unit filename="simplescreen.cpp" />
 		<Unit filename="simplescreen.h" />
 		<Unit filename="stdafx.h" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

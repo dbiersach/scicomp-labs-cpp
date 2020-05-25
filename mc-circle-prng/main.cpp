@@ -3,14 +3,14 @@
 
 using namespace std;
 
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     ss.DrawAxes();
     ss.DrawCircle(0, 0, 1, "green", 2);
 
-    seed_seq seed{ 2017 };
-    default_random_engine generator{ seed };
-    uniform_real_distribution<double> distribution{ 0, 1 };
+    seed_seq seed{2017};
+    default_random_engine generator{seed};
+    uniform_real_distribution<double> distribution{-1, 1};
 
     const int iterations = 100000;
     int count{};
@@ -19,9 +19,10 @@ void draw(SimpleScreen& ss)
 
     for (int i{}; i < iterations; ++i)
     {
-        double x = distribution(generator) * 2.0 - 1.0;
-        double y = distribution(generator) * 2.0 - 1.0;
-        if (x*x + y*y <= 1.0)
+        double x = distribution(generator);
+        double y = distribution(generator);
+
+        if (x * x + y * y <= 1.0)
         {
             ss.DrawPoint(x, y, "red");
             count++;
@@ -40,7 +41,6 @@ void draw(SimpleScreen& ss)
          << "Est. Area  = " << area << endl
          << "Act. Area  = " << M_PI << endl
          << "Abs. % Err = " << abs(err) << endl;
-
 }
 
 int main()

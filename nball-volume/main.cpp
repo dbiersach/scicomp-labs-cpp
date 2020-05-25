@@ -2,25 +2,25 @@
 
 using namespace std;
 
-// Euler's Gamma kernel
-inline double f(double x, double n)
+// Euler's Gamma integrand
+inline double f(double x, double s)
 {
-    return pow(x,n-1) * exp(-x);
+    return pow(x, s - 1) * exp(-x);
 }
 
 // Find Gamma using Simpson's integration
-double gamma(double n)
+double gamma(double s)
 {
-    double a{ 0 };
-    double b{ 1e3 };
+    double a{0};
+    double b{1e3};
     int intervals = 1e5;
 
-    double dx{ (b - a) / intervals };
-    double sum{ f(a,n) + f(b,n) };
+    double dx{(b - a) / intervals};
+    double sum{f(a, s) + f(b, s)};
     a += dx;
-    for (int i{ 1 }; i < intervals; ++i, a += dx)
-        sum += f(a, n)*(2 * (i % 2 + 1));
-    return (dx / 3)*sum;
+    for (int i{1}; i < intervals; ++i, a += dx)
+        sum += f(a, s) * (2 * (i % 2 + 1));
+    return (dx / 3) * sum;
 }
 
 // Find volume of unit ball
@@ -60,9 +60,10 @@ tuple<double, double> find_max(double x1, double x2, double epsilon)
 int main()
 {
     cout << "Unit Hypersphere" << endl
-         << "Dim  Volume" << endl << fixed;
+         << "Dim  Volume" << endl
+         << fixed;
 
-    for (double x{ 1 }; x <= 10; x += 1)
+    for (double x{1}; x <= 10; x += 1)
         cout << setw(2) << setprecision(0) << x << " = "
              << setprecision(6) << v(x) << endl;
 
@@ -73,4 +74,3 @@ int main()
 
     return 0;
 }
-

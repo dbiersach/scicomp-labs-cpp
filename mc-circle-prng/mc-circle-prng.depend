@@ -64,3 +64,53 @@
 	"stdafx.h"
 	"simplescreen.h"
 
+1590418773 source:/home/scicompuser2/scicomp-labs-cpp/mc-circle-prng/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1590418718 /home/scicompuser2/scicomp-labs-cpp/mc-circle-prng/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1590418754 /home/scicompuser2/scicomp-labs-cpp/mc-circle-prng/simplescreen.h
+	"stdafx.h"
+
+1590418676 source:/home/scicompuser2/scicomp-labs-cpp/mc-circle-prng/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

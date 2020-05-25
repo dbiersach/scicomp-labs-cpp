@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     ss.DrawAxes();
     ss.DrawCircle(0, 0, 1, "green", 2);
@@ -24,7 +24,7 @@ void draw(SimpleScreen& ss)
 
         double x = r[0] * -2.0 - 1.0;
         double y = r[1] * -2.0 - 1.0;
-        if (x*x + y*y <= 1.0)
+        if (x * x + y * y <= 1.0)
         {
             ss.DrawPoint(x, y, "red");
             count++;
@@ -43,8 +43,8 @@ void draw(SimpleScreen& ss)
          << "Iterations = " << iterations << endl
          << "Est. Area  = " << estArea << endl
          << "Act. Area  = " << actArea << endl
-         << "Abs. % Err = " << abs(err) << endl << endl;
-
+         << "Abs. % Err = " << abs(err) << endl
+         << endl;
 }
 
 int main()

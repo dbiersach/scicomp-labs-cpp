@@ -28,9 +28,6 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Compiler>
-			<Add option="-fexceptions" />
-		</Compiler>
 		<Unit filename="main.cpp" />
 		<Unit filename="niederreiter.cpp" />
 		<Unit filename="niederreiter.h" />

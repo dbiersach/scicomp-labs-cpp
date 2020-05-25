@@ -4,20 +4,20 @@
 
 using namespace std;
 
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     // Set the radius of the sphere
     double radius = 1.0;
 
     // Calculate the angle deltas
     double intervals = 37;
-    double deltaPhi = M_PI / intervals;         // Latitudes
-    double deltaTheta = 2 * M_PI / intervals;   // Longitudes
+    double deltaPhi = M_PI / intervals;       // Latitudes
+    double deltaTheta = 2 * M_PI / intervals; // Longitudes
 
     // Step phi around a half-circle to set each vertex "Y" coordinate
     for (double phi = 0; phi < M_PI; phi += deltaPhi)
     {
-        PointSet3D* vertices = new PointSet3D();
+        PointSet3D *vertices = new PointSet3D();
         vertices->add(0, radius * cos(phi), 0);
         vertices->add(0, radius * cos(phi), 0);
         vertices->add(0, radius * cos(phi + deltaPhi), 0);
@@ -45,8 +45,8 @@ void draw(SimpleScreen& ss)
             // At the North pole (phi == 0) vertex 0 and 1 are the same points,
             // so we use a different vertex number ordering to designate a
             // more meaningful surface normal for those particular facets
-            Facet* f = (phi > 0) ? new Facet(vertices, { 0, 1, 2, 3 })
-                       : new Facet(vertices, { 2, 3, 0, 1 });
+            Facet *f = (phi > 0) ? new Facet(vertices, {0, 1, 2, 3})
+                                 : new Facet(vertices, {2, 3, 0, 1});
 
             ss.DrawFacet(f, al_color_name("black"), al_color_name("darkgreen"), 1, false, false, 0);
         }
@@ -68,7 +68,7 @@ void draw(SimpleScreen& ss)
         double x = r[0] * -2.0 - 1.0;
         double y = r[1] * -2.0 - 1.0;
         double z = r[2] * -2.0 - 1.0;
-        if (x*x + y*y + z*z <= 1.0)
+        if (x * x + y * y + z * z <= 1.0)
         {
             ss.DrawPoint3D(x, y, z, "red");
             count++;
@@ -87,7 +87,8 @@ void draw(SimpleScreen& ss)
          << "Iterations = " << iterations << endl
          << "Est. Volume  = " << estVol << endl
          << "Act. Volume  = " << actVol << endl
-         << "Abs. % Error = " << abs(err) << endl << endl;
+         << "Abs. % Error = " << abs(err) << endl
+         << endl;
 }
 
 int main()

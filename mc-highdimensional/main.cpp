@@ -2,9 +2,8 @@
 
 using namespace std;
 
-const int primes[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,
-                       37, 41, 43, 47, 53, 59, 61, 67, 71
-                     };
+const int primes[] = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31,
+                      37, 41, 43, 47, 53, 59, 61, 67, 71};
 
 double Halton(int n, int p)
 {
@@ -21,7 +20,7 @@ double Halton(int n, int p)
 int main()
 {
     int iterations = int(1e7);
-    for (int dimension{ 2 }; dimension < 13; ++dimension)
+    for (int dimension{2}; dimension < 13; ++dimension)
     {
         double count{};
         for (int i{}; i < iterations; ++i)
