@@ -4,48 +4,49 @@ using namespace std;
 
 void harmonograph()
 {
-    const int timeSteps{ 2500 };
-    const double endTime{ 10 };
-    const double deltaTime{ endTime / timeSteps };
-    double timeAt[timeSteps];
-    timeAt[0] = 0.0;
+    const double g = 9.8; // (m/s^2)
 
-    const double g = 9.8;		// (m/s^2)
-
-    // Define first pendulum
-    double omega1[timeSteps];
-    double theta1[timeSteps];
-    const double length1 = 1.0;	// (m)
-    const double phaseConstant1 = g / length1;
-    theta1[0] = 1;
-    omega1[0] = 0;
+    const int timeSteps{2500};
+    const double endTime{10};
+    const double deltaTime{endTime / timeSteps};
+    
+	vector<double> time(timeSteps,0);
+	vector<double> omega1(timeSteps,0);
+	vector<double> theta1(timeSteps,0);
+	vector<double> omega2(timeSteps,0);
+	vector<double> theta2(timeSteps,0);
 
     // Define first pendulum
-    double omega2[timeSteps];
-    double theta2[timeSteps];
-    const double length2 = 1.5;	// (m)
+    const double length1 = 1.0; // (m)
+    theta1.at(0) = 1.0;         // (rads)
+    omega1.at(0) = 1.0;         // (rads/s)
+
+    // Define second pendulum
+    const double length2 = 1.5; // (m)
+    theta2.at(0) = 1.0;         // (rads)
+    omega2.at(0) = 0.0;         // (rads/s)
+
+    const double phaseConstant1 = g / length1;    
     const double phaseConstant2 = g / length2;
-    theta2[0] = 1;
-    omega2[0] = 0;
 
     // Perform Euler-Cromer method to estimate differential equation
     for (int step{}; step < timeSteps - 1; ++step)
     {
         // First pendulum
-        omega1[step + 1] = omega1[step] - phaseConstant1 * theta1[step] * deltaTime;
-        theta1[step + 1] = theta1[step] + omega1[step + 1] * deltaTime;
+        omega1.at(step + 1) = omega1.at(step) - phaseConstant1 * theta1.at(step) * deltaTime;
+        theta1.at(step + 1) = theta1.at(step) + omega1.at(step + 1) * deltaTime;
         // Second pendulum
-        omega2[step + 1] = omega2[step] - phaseConstant2 * theta2[step] * deltaTime;
-        theta2[step + 1] = theta2[step] + omega2[step + 1] * deltaTime;
+        omega2.at(step + 1) = omega2.at(step) - phaseConstant2 * theta2.at(step) * deltaTime;
+        theta2.at(step + 1) = theta2.at(step) + omega2.at(step + 1) * deltaTime;
         // Update time
-        timeAt[step + 1] = timeAt[step] + deltaTime;
+        time.at(step + 1) = time.at(step) + deltaTime;
     }
 
     // Graph the decay curve using CERN's ROOT libraries
-    TCanvas* c1 = new TCanvas("Two Pendulum Harmonograph");
+    TCanvas *c1 = new TCanvas("Two Pendulum Harmonograph");
     c1->SetTitle("Two Pendulum Harmonograph - Euler-Cromer Method");
 
-    TGraph* g1 = new TGraph(timeSteps, theta1, theta2);
+    TGraph *g1 = new TGraph(timeSteps, theta1.data(), theta2.data());
 
     g1->SetTitle("Two Pendulum Harmonograph - Euler-Cromer Method;theta (radians);theta (radians)");
     g1->SetMarkerStyle(kDot);
