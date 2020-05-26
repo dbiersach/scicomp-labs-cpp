@@ -2,14 +2,14 @@
 
 using namespace std;
 
-vector<double> xOrd;
-vector<double> xAct;
-vector<double> yAct;
-vector<double> xRad;
-vector<double> fCos;
-vector<double> fSin;
-vector<double> yEst;
-vector<double> yPower;
+vector<double> xOrd;    // Sample # (0-99)
+vector<double> xAct;    // Actual X value sampled
+vector<double> yAct;    // Actual Y value sampled
+vector<double> xRad;    // Scaled X value (0...2PI)
+vector<double> fCos;    // Frequency Cosine Amplitude
+vector<double> fSin;    // Frequence Sine Amplitude
+vector<double> yEst;    // Reconstructed Y value
+vector<double> yPower;  // Frequency Power Amplitude
 
 struct csv_reader : ctype<char>
 {
