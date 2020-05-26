@@ -9,7 +9,7 @@ bool crumbs[10][10];
 int visitCount[10][10];
 
 vector<string> visitColors =
-{ "blue","green","red","orange","purple","yellow","cyan" };
+    {"blue", "green", "red", "orange", "purple", "yellow", "cyan"};
 
 vector<tuple<int, int, int>> stack;
 
@@ -26,14 +26,11 @@ void ResetVisitCount()
 
 void LoadMaze(int argc, char *argv[])
 {
-    // Ensure user has provided a filename
-    if (argc < 2)
-    {
-        cout << "Error: Missing maze data filename";
-        exit(-1);
-    }
+    string filename = "maze.dat";
 
-    string filename = argv[1];
+    if (argc = 1)
+        filename = argv[1];
+
     ifstream mazeFile(filename, ios::binary);
     if (!mazeFile)
     {
@@ -45,18 +42,16 @@ void LoadMaze(int argc, char *argv[])
     {
         for (int c = 0; c < 10; c++)
         {
-            mazeFile.read((char*)&maze[r][c], sizeof(char));
+            mazeFile.read((char *)&maze[r][c], sizeof(char));
             crumbs[r][c] = false;
         }
     }
-
-    mazeFile.close();
 }
 
-void DrawMaze(SimpleScreen& ss)
+void DrawMaze(SimpleScreen &ss)
 {
     // Draw maze (rows by cols)
-    for (size_t r{ 0 }; r < 10; ++r)
+    for (size_t r{0}; r < 10; ++r)
     {
         double y0 = (9 - r) * 45;
         double y1 = (9 - r) * 45 + 45;
@@ -115,8 +110,7 @@ void DrawVisitCount(SimpleScreen &ss)
     }
 }
 
-
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     DrawVisitCount(ss);
 }
@@ -143,8 +137,8 @@ bool TryStep()
     get<2>(stack.back()) *= 2;
 
     if (((maze[r][c] & dir) != dir) &&
-            (!crumbs[r2][c2]) &&
-            (stack.size() <= minSteps))
+        (!crumbs[r2][c2]) &&
+        (stack.size() <= minSteps))
     {
         tuple<int, int, int> cell(r2, c2, 1);
         stack.push_back(cell);
@@ -173,11 +167,12 @@ bool TryStep()
     return false;
 }
 
-void Navigate(SimpleScreen& ss, bool singleStep)
+void Navigate(SimpleScreen &ss, bool singleStep)
 {
     while (!foundExit)
     {
-        while (!TryStep());
+        while (!TryStep())
+            ;
         if (foundExit)
         {
             cout << "Exit found!" << endl
@@ -195,7 +190,7 @@ void Navigate(SimpleScreen& ss, bool singleStep)
     }
 }
 
-void eventHandler(SimpleScreen& ss, ALLEGRO_EVENT& ev)
+void eventHandler(SimpleScreen &ss, ALLEGRO_EVENT &ev)
 {
     if (ev.type == ALLEGRO_EVENT_KEY_CHAR)
     {
@@ -230,4 +225,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
