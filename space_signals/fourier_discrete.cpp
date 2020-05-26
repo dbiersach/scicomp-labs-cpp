@@ -14,7 +14,7 @@ vector<double> yPower;
 struct csv_reader : ctype<char>
 {
     csv_reader() : ctype<char>(get_table()) {}
-    static ctype_base::mask const* get_table()
+    static ctype_base::mask const *get_table()
     {
         static vector<ctype_base::mask> rc(table_size, ctype_base::mask());
         rc[','] = ctype_base::space;
@@ -30,7 +30,8 @@ void LoadSamples(string filename)
     if (!infile.is_open())
     {
         cout << "Error: Unable to open file "
-             "\"" << filename << "\"" << endl;
+                "\""
+             << filename << "\"" << endl;
         exit(-1);
     }
 
@@ -61,13 +62,13 @@ void ScaleDomain()
 
 void CalcDFT()
 {
-    const size_t sample_count{ yAct.size() };
-    const size_t term_count{ sample_count / 2 };
+    const size_t sample_count{yAct.size()};
+    const size_t term_count{sample_count / 2};
 
-    for (size_t term{ 0 }; term < term_count; ++term)
+    for (size_t term{0}; term < term_count; ++term)
     {
-        double fcos{ 0 }, fsin{ 0 };
-        for (size_t i{ 0 }; i < sample_count; ++i)
+        double fcos{0}, fsin{0};
+        for (size_t i{0}; i < sample_count; ++i)
         {
             double xs = xRad.at(i);
             double ys = yAct.at(i);
@@ -88,8 +89,8 @@ void CalcDFT()
 
 void CalcIDFT()
 {
-    size_t sample_count{ yAct.size() };
-    size_t term_count{ fCos.size() };
+    size_t sample_count{yAct.size()};
+    size_t term_count{fCos.size()};
 
     for (size_t i{}; i < sample_count; ++i)
     {
@@ -106,57 +107,57 @@ void CalcIDFT()
 
 void CalcPowerSpectrum()
 {
-    size_t term_count{ fCos.size() };
+    size_t term_count{fCos.size()};
     for (size_t term{}; term < term_count; ++term)
         yPower.push_back(sqrt(pow(fCos.at(term), 2) + pow(fSin.at(term), 2)));
 }
 
 void PlotTransforms()
 {
-    string c1Title{ "Samples" };
-    TCanvas* c1 = new TCanvas(c1Title.c_str());
+    string c1Title{"Samples"};
+    TCanvas *c1 = new TCanvas(c1Title.c_str());
     c1->SetTitle(c1Title.c_str());
-    TMultiGraph* mg1 = new TMultiGraph();
+    TMultiGraph *mg1 = new TMultiGraph();
     mg1->SetTitle(c1Title.c_str());
-    TGraph* g1 = new TGraph(xAct.size(), &xAct[0], &yAct[0]);
+    TGraph *g1 = new TGraph(xAct.size(), xAct.data(), yAct.data());
     g1->SetLineColor(kBlue);
     g1->SetLineWidth(2);
     mg1->Add(g1);
-    TGraph* g2 = new TGraph(xAct.size(), &xAct[0], &yEst[0]);
+    TGraph *g2 = new TGraph(xAct.size(), xAct.data(), yEst.data());
     g2->SetLineColor(kRed);
     g2->SetLineWidth(2);
     mg1->Add(g2);
     mg1->Draw("AL");
-    TLegend* leg1 = new TLegend(0.8, 0.85, 0.9, 0.9);
-    leg1->AddEntry(g1, "Actual","l");
-    leg1->AddEntry(g2, "Reconstructed","l");
+    TLegend *leg1 = new TLegend(0.8, 0.85, 0.9, 0.9);
+    leg1->AddEntry(g1, "Actual", "l");
+    leg1->AddEntry(g2, "Reconstructed", "l");
     leg1->Draw();
 
-    string c2Title{ "Discrete Fourier Transform" };
-    TCanvas* c2 = new TCanvas(c2Title.c_str());
+    string c2Title{"Discrete Fourier Transform"};
+    TCanvas *c2 = new TCanvas(c2Title.c_str());
     c2->SetTitle(c2Title.c_str());
-    TMultiGraph* mg2 = new TMultiGraph();
+    TMultiGraph *mg2 = new TMultiGraph();
     mg2->SetTitle(c2Title.c_str());
-    TGraph* g3 = new TGraph(fCos.size(), &xOrd[0], &fCos[0]);
+    TGraph *g3 = new TGraph(fCos.size(), xOrd.data(), fCos.data());
     g3->SetFillColor(kBlue);
     mg2->Add(g3);
-    TGraph* g4 = new TGraph(fSin.size(), &xOrd[0], &fSin[0]);
+    TGraph *g4 = new TGraph(fSin.size(), xOrd.data(), fSin.data());
     g4->SetFillColor(kRed);
     mg2->Add(g4);
     mg2->Draw("AB");
-    TLegend* leg2 = new TLegend(0.85, 0.85, 0.9, 0.9);
+    TLegend *leg2 = new TLegend(0.85, 0.85, 0.9, 0.9);
     leg2->AddEntry(g3, "fCos", "f");
     leg2->AddEntry(g4, "fSin", "f");
     leg2->Draw();
     mg2->GetXaxis()->SetLimits(0, fCos.size());
     gPad->Modified();
 
-    string c3Title{ "Power Spectrum" };
-    TCanvas* c3 = new TCanvas(c3Title.c_str());
+    string c3Title{"Power Spectrum"};
+    TCanvas *c3 = new TCanvas(c3Title.c_str());
     c3->SetTitle(c3Title.c_str());
-    TMultiGraph* mg3 = new TMultiGraph();
+    TMultiGraph *mg3 = new TMultiGraph();
     mg3->SetTitle(c3Title.c_str());
-    TGraph* g5 = new TGraph(yPower.size(), &xOrd[0], &yPower[0]);
+    TGraph *g5 = new TGraph(yPower.size(), xOrd.data(), yPower.data());
     g5->SetFillColor(kGreen);
     mg3->Add(g5);
     mg3->Draw("AB");
