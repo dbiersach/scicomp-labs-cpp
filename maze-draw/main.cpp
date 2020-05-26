@@ -3,56 +3,35 @@
 
 using namespace std;
 
-struct csv_reader : ctype<char>
-{
-    csv_reader() : ctype<char>(get_table()) {}
-    static ctype_base::mask const* get_table()
-    {
-        static vector<ctype_base::mask>
-        rc(table_size, ctype_base::mask());
-        rc[','] = ctype_base::space;
-        rc['\n'] = ctype_base::space;
-        rc[' '] = ctype_base::space;
-        return &rc[0];
-    }
-};
-
 int maze[10][10];
 
 void LoadMaze()
 {
-    string line;
-    stringstream ss;
-    ss.imbue(locale(locale(), new csv_reader()));
-
     ifstream mazeFile("maze.csv");
     if (!mazeFile)
     {
         cout << "Missing maze.csv file!" << endl;
         exit(-1);
     }
-
-    for (int r = 0; r < 10; r++)
+    string line{};
+    const regex comma(",");
+    for (int r{}; r < 10; r++)
     {
         getline(mazeFile, line);
-        ss.str(line);
-        for (int c = 0; c < 10; c++)
-            ss >> maze[r][c];
-        ss.clear();
+        vector<string> row{
+            sregex_token_iterator(line.begin(), line.end(), comma, -1),
+            sregex_token_iterator()};
+        for (int c{}; c < 10; c++)
+            maze[r][c] = stoi(row.at(c));
     }
-
-    mazeFile.close();
 }
 
 void SaveMaze()
 {
     ofstream mazeFile("maze.dat", ios::binary);
-
     for (int r = 0; r < 10; r++)
         for (int c = 0; c < 10; c++)
-            mazeFile.write((char*)&maze[r][c], sizeof(char));
-
-    mazeFile.close();
+            mazeFile.write((char *)&maze[r][c], sizeof(char));
 }
 
 void PrintMaze()
@@ -118,7 +97,6 @@ void ValidateCell(int row, int col, int direction)
             r2++;
             if ((maze[r2][c2] & 1) == 1)
                 return;
-
         }
     }
 
@@ -202,7 +180,7 @@ void ValidateMaze()
     cout << "Maze is valid!" << endl;
 }
 
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     // Draw maze (rows by cols)
     for (int r = 0; r < 10; r++)
@@ -214,10 +192,10 @@ void draw(SimpleScreen& ss)
             double x0 = c * 45;
             double x1 = c * 45 + 45;
 
-            Point2D v0(x0, y0);	// Lower-left vertex
-            Point2D v1(x1, y0);	// Lower-right vertex
-            Point2D v2(x1, y1);	// Upper-right vertex
-            Point2D v3(x0, y1);	// Upper-left vertex
+            Point2D v0(x0, y0); // Lower-left vertex
+            Point2D v1(x1, y0); // Lower-right vertex
+            Point2D v2(x1, y1); // Upper-right vertex
+            Point2D v3(x0, y1); // Upper-left vertex
 
             // Draw entrance cell
             if (r == 0 && c == 0)
