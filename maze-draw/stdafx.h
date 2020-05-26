@@ -20,6 +20,7 @@
 #include <memory>
 #include <mutex>
 #include <random>
+#include <regex>
 #include <sstream>
 #include <string>
 #include <thread>
