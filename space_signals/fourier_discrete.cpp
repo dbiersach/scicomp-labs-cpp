@@ -2,55 +2,34 @@
 
 using namespace std;
 
-vector<double> xOrd;
-vector<double> xAct;
-vector<double> yAct;
-vector<double> xRad;
-vector<double> fCos;
-vector<double> fSin;
-vector<double> yEst;
-vector<double> yPower;
-
-struct csv_reader : ctype<char>
-{
-    csv_reader() : ctype<char>(get_table()) {}
-    static ctype_base::mask const *get_table()
-    {
-        static vector<ctype_base::mask> rc(table_size, ctype_base::mask());
-        rc[','] = ctype_base::space;
-        rc['\n'] = ctype_base::space;
-        rc[' '] = ctype_base::space;
-        return &rc[0];
-    }
-};
+vector<double> xOrd;    // Sample # (0-99)
+vector<double> xAct;    // Actual X value sampled
+vector<double> yAct;    // Actual Y value sampled
+vector<double> xRad;    // Scaled X value (radians)
+vector<double> fCos;    // Frequency Cosine Amplitude
+vector<double> fSin;    // Frequence Sine Amplitude
+vector<double> yEst;    // Reconstructed Y value
+vector<double> yPower;  // Frequency Power Amplitude
 
 void LoadSamples(string filename)
 {
     ifstream infile(filename);
     if (!infile.is_open())
     {
-        cout << "Error: Unable to open file "
-                "\""
-             << filename << "\"" << endl;
+        cout << "Unable to open " << filename << endl;
         exit(-1);
     }
-
-    double x, y;
-    string line;
-    stringstream ss;
-
-    ss.imbue(locale(locale(), new csv_reader()));
-    while (getline(infile, line))
+    string line{};
+    const regex comma(",");
+    while (infile && getline(infile, line))
     {
-        ss.str(line);
-        ss >> x >> y;
-        ss.clear();
-        xAct.push_back(x);
-        yAct.push_back(y);
+        vector<string> row{
+            sregex_token_iterator(line.begin(), line.end(), comma, -1),
+            sregex_token_iterator()};
+        xAct.push_back(stod(row.at(0)));
+        yAct.push_back(stod(row.at(1)));
         xOrd.push_back(xAct.size() - 1);
     }
-
-    infile.close();
 }
 
 void ScaleDomain()
