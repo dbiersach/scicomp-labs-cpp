@@ -20,12 +20,12 @@ void LoadSamples(string filename)
         exit(-1);
     }
     string line{};
-    const std::regex comma(",");
+    regex comma(",");
     while (infile && getline(infile, line))
     {
-        std::vector<std::string> row{
-            std::sregex_token_iterator(line.begin(), line.end(), comma, -1),
-            std::sregex_token_iterator()};
+        vector<string> row{
+            sregex_token_iterator(line.begin(), line.end(), comma, -1),
+            sregex_token_iterator()};
         xAct.push_back(stod(row.at(0)));
         yAct.push_back(stod(row.at(1)));
         xOrd.push_back(xAct.size() - 1);
