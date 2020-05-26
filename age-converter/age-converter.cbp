@@ -13,6 +13,7 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-fexceptions -std=c++17" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -22,12 +23,20 @@
 				<Option compiler="clang" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add option="-fexceptions -std=c++17" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 				</Linker>
 			</Target>
 		</Build>
+		<Compiler>
+			<Add option="-m64" />
+			<Add option="-fexceptions -std=c++17" />
+		</Compiler>
+		<Linker>
+			<Add option="-m64" />
+		</Linker>
 		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
 		<Extensions>

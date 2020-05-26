@@ -4,19 +4,15 @@ using namespace std;
 
 int main()
 {
-	double ageInYears = 0;
+	int ageInYears = 0;
 
-	double ageInSeconds =
-		ageInYears * 1;
+	int ageInSeconds = ageInYears;
 
-	cout.imbue(std::locale(""));
-	cout << fixed << setprecision(2);
+	cout.imbue(locale(""));
 
-	cout << "Age (years) = "
-		<< ageInYears << endl;
+	cout << "My age is:" << endl;
+	cout << ageInYears << " (yrs)" << endl;
+	cout << ageInSeconds << " (s)" << endl;
 
-	cout << "Age (secs) = "
-        << endl;
-
-    return 0;
+	return 0;
 }
