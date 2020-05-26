@@ -20,7 +20,7 @@ void LoadSamples(string filename)
         exit(-1);
     }
     string line{};
-    regex comma(",");
+    const regex comma(",");
     while (infile && getline(infile, line))
     {
         vector<string> row{
