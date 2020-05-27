@@ -50,3 +50,55 @@
 	"stdafx.h"
 	"simplescreen.h"
 
+1590526259 source:/home/scicompuser2/Desktop/scicomp301/session22/lab1/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1590529510 /home/scicompuser2/Desktop/scicomp301/session22/lab1/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<filesystem>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<regex>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1590526259 /home/scicompuser2/Desktop/scicomp301/session22/lab1/simplescreen.h
+	"stdafx.h"
+
+1590530574 source:/home/scicompuser2/Desktop/scicomp301/session22/lab1/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

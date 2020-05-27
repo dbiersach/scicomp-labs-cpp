@@ -26,7 +26,7 @@ void LoadMaze(int argc, char *argv[])
 {
     string filename = "maze.dat";
 
-    if (argc = 1)
+    if (argc == 2)
         filename = argv[1];
 
     ifstream mazeFile(filename, ios::binary);

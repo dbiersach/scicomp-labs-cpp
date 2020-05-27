@@ -31,9 +31,6 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-Wall" />
-			<Add option="-std=c++14" />
-			<Add option="-fexceptions" />
 			<Add directory="/usr/include/allegro5" />
 		</Compiler>
 		<Linker>
@@ -52,13 +49,9 @@
 			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_video.so" />
 		</Linker>
 		<Unit filename="main.cpp" />
-		<Unit filename="maze.dat" />
 		<Unit filename="simplescreen.cpp" />
 		<Unit filename="simplescreen.h" />
 		<Unit filename="stdafx.h" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

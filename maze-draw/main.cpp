@@ -2,15 +2,19 @@
 #include "simplescreen.h"
 
 using namespace std;
+using namespace std::filesystem;
 
 int maze[10][10];
 
+string csvFileName{"maze.csv"};
+string datFileName{"maze.dat"};
+
 void LoadMaze()
 {
-    ifstream mazeFile("maze.csv");
+    ifstream mazeFile(csvFileName, ios::binary);
     if (!mazeFile)
     {
-        cout << "Missing maze.csv file!" << endl;
+        cout << "Cannot open " << csvFileName << endl;
         exit(-1);
     }
     string line{};
@@ -28,7 +32,7 @@ void LoadMaze()
 
 void SaveMaze()
 {
-    ofstream mazeFile("maze.dat", ios::binary);
+    ofstream mazeFile(datFileName, ios::binary);
     for (int r = 0; r < 10; r++)
         for (int c = 0; c < 10; c++)
             mazeFile.write((char *)&maze[r][c], sizeof(char));
@@ -227,8 +231,14 @@ void draw(SimpleScreen &ss)
     }
 }
 
-int main()
+int main(int argc, char *argv[])
 {
+    if (argc == 2)
+    {
+        csvFileName = argv[1];
+        datFileName = (string)path(csvFileName).replace_extension(".dat");
+    }
+
     LoadMaze();
     ValidateMaze();
     SaveMaze();
