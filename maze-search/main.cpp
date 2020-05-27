@@ -15,6 +15,8 @@ vector<tuple<int, int, int>> stack;
 bool foundExit = false;
 int totalSteps = 0;
 
+string datFileName{"maze.dat"};
+
 void ResetVisitCount()
 {
     for (int r = 0; r < 10; r++)
@@ -22,17 +24,12 @@ void ResetVisitCount()
             visitCount[r][c] = 0;
 }
 
-void LoadMaze(int argc, char *argv[])
+void LoadMaze()
 {
-    string filename = "maze.dat";
-
-    if (argc == 2)
-        filename = argv[1];
-
-    ifstream mazeFile(filename, ios::binary);
+    ifstream mazeFile(datFileName, ios::binary);
     if (!mazeFile)
     {
-        cout << "Missing maze.dat file!" << endl;
+        cout << "Cannot open " << datFileName << endl;
         exit(-1);
     }
 
@@ -211,7 +208,10 @@ void eventHandler(SimpleScreen &ss, ALLEGRO_EVENT &ev)
 
 int main(int argc, char *argv[])
 {
-    LoadMaze(argc, argv);
+    if (argc == 2)
+        datFileName = argv[1];
+
+    LoadMaze();
 
     ResetVisitCount();
 
