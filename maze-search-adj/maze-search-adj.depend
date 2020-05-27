@@ -71,3 +71,60 @@
 	"stdafx.h"
 	"simplescreen.h"
 
+1590526275 source:/home/scicompuser2/scicomp-labs-cpp/maze-search-adj/adjmatrix.cpp
+	"stdafx.h"
+	"adjmatrix.h"
+
+1590526275 /home/scicompuser2/scicomp-labs-cpp/maze-search-adj/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1590542330 /home/scicompuser2/scicomp-labs-cpp/maze-search-adj/adjmatrix.h
+
+1590542440 source:/home/scicompuser2/scicomp-labs-cpp/maze-search-adj/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+	"adjmatrix.h"
+
+1590526275 /home/scicompuser2/scicomp-labs-cpp/maze-search-adj/simplescreen.h
+	"stdafx.h"
+
+1590526275 source:/home/scicompuser2/scicomp-labs-cpp/maze-search-adj/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
