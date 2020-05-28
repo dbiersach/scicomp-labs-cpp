@@ -131,7 +131,8 @@ int main()
 
     cout << fixed << setprecision(4);
 
-    cout << "DetCoeff = " << detCoeff << endl cout << endl;
+    cout << "DetCoeff = " << detCoeff << endl;
+    cout << endl;
 
     cout << "DetA = " << setw(14) << detA << endl;
     cout << "DetB = " << setw(14) << detB << endl;
