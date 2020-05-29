@@ -62,6 +62,8 @@ void draw(SimpleScreen& ss)
     }
 
     ss.UnlockDisplay();
+
+    //ss.DrawAxes("white", 2);
 }
 
 int main()
