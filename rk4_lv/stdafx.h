@@ -12,6 +12,7 @@
 #include <cstdio>
 #include <ctime>
 #include <fstream>
+#include <filesystem>
 #include <functional>
 #include <iomanip>
 #include <iostream>
@@ -22,6 +23,7 @@
 #include <memory>
 #include <mutex>
 #include <random>
+#include <regex>
 #include <sstream>
 #include <string>
 #include <thread>

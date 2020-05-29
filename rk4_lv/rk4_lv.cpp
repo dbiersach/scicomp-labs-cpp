@@ -2,10 +2,22 @@
 
 using namespace std;
 
+// Lotka-Volterra {Prey} dx/dt
+double d_prey(double x, double y, double t)
+{
+    return 0;
+}
+
+// Lotka-Volterra {Predator} dy/dt
+double d_predator(double x, double y, double t)
+{
+    return 0;
+}
+
 // Runge-Kutta method for two coupled 1st order differential equations
 void runge_kutta(double &x1, double &x2, double &t, const double dt,
-                 double(*fx1)(double, double, double),
-                 double(*fx2)(double, double, double))
+                 double (*fx1)(double, double, double),
+                 double (*fx2)(double, double, double))
 {
     double dx1 = fx1(x1, x2, t);
     double dy1 = fx2(x1, x2, t);
@@ -22,18 +34,6 @@ void runge_kutta(double &x1, double &x2, double &t, const double dt,
     x1 += dt * (dx1 + 2.0 * dx2 + 2.0 * dx3 + dx4) / 6.0;
     x2 += dt * (dy1 + 2.0 * dy2 + 2.0 * dy3 + dy4) / 6.0;
     t += dt;
-}
-
-// Lotka-Volterra {Prey} dx/dt
-double d_prey(double x, double y, double t)
-{
-    return 0;
-}
-
-// Lotka-Volterra {Predator} dy/dt
-double d_predator(double x, double y, double t)
-{
-    return 0;
 }
 
 void rk4_lv()
@@ -65,7 +65,7 @@ void rk4_lv()
     predator[0] = y;
 
     // Use Runge-Kutta for coupled differential equations
-    for (int step{ 1 }; step < steps; ++step)
+    for (int step{1}; step < steps; ++step)
     {
         runge_kutta(x, y, t, dt, d_prey, d_predator);
         time[step] = t;
@@ -75,20 +75,20 @@ void rk4_lv()
 
     // Graph the curve using CERN's ROOT libraries
     string title = "Lotka-Volterra using RK4";
-    TCanvas* c1 = new TCanvas(title.c_str());
+    TCanvas *c1 = new TCanvas(title.c_str());
     c1->SetTitle(title.c_str());
 
-    TMultiGraph* mg1 = new TMultiGraph();
+    TMultiGraph *mg1 = new TMultiGraph();
     mg1->SetTitle((title + ";time;population").c_str());
 
-    TGraph* g1 = new TGraph(steps, time, prey);
+    TGraph *g1 = new TGraph(steps, time, prey);
     //g1->SetTitle((title + ";time;count").c_str());
     g1->SetMarkerColor(kBlue);
     g1->SetLineColor(kBlue);
     g1->SetLineWidth(3);
     mg1->Add(g1);
 
-    TGraph* g2 = new TGraph(steps, time, predator);
+    TGraph *g2 = new TGraph(steps, time, predator);
     //g2->SetTitle((title + ";time;count").c_str());
     g2->SetMarkerColor(kRed);
     g2->SetLineColor(kRed);
@@ -96,10 +96,8 @@ void rk4_lv()
     mg1->Add(g2);
 
     mg1->Draw("AL");
-    TLegend* leg1 = new TLegend(0.8, 0.85, 0.9, 0.9);
+    TLegend *leg1 = new TLegend(0.8, 0.85, 0.9, 0.9);
     leg1->AddEntry(g1, "prey", "l");
     leg1->AddEntry(g2, "predator", "l");
     leg1->Draw();
 }
-
-
