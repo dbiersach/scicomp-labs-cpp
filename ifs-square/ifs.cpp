@@ -3,12 +3,12 @@
 
 IteratedFunctionSystem::IteratedFunctionSystem()
 {
-    transforms = new vector <Transform*>();
+    transforms = new vector<Transform *>();
 }
 
 IteratedFunctionSystem::~IteratedFunctionSystem()
 {
-    for (Transform* t : *transforms)
+    for (Transform *t : *transforms)
         delete t;
     transforms->clear();
     delete transforms;
@@ -26,9 +26,7 @@ double IteratedFunctionSystem::Determinant(double matrix[3][3])
     double h = matrix[2][1];
     double i = matrix[2][2];
 
-    double det{ a * (e * i - f * h)
-                - (b * (d * i - f * g))
-                + color * (d * h - e * g) };
+    double det{a * (e * i - f * h) - (b * (d * i - f * g)) + color * (d * h - e * g)};
 
     return det;
 }
@@ -55,7 +53,7 @@ void IteratedFunctionSystem::AddMapping(double xLeft, double yLeft,
 {
     cdf += probability;
 
-    Transform* t = new Transform();
+    Transform *t = new Transform();
     t->x1 = xLeft;
     t->y1 = yLeft;
     t->x2 = xRight;
@@ -86,7 +84,7 @@ void IteratedFunctionSystem::GenerateTransforms()
 
     double d = Determinant(coeff);
 
-    for (Transform* t : *transforms)
+    for (Transform *t : *transforms)
     {
         double xVec[3];
         xVec[0] = t->x1;
@@ -124,16 +122,16 @@ void IteratedFunctionSystem::GenerateTransforms()
     }
 }
 
-void IteratedFunctionSystem::TransformPoint(double& x, double& y, ALLEGRO_COLOR &clr)
+void IteratedFunctionSystem::TransformPoint(double &x, double &y, ALLEGRO_COLOR &clr)
 {
     double p = distribution(generator);
 
     // Find first transform with smaller probability
     size_t tn = 0;
-    for (; tn < transforms->size()
-            && p > transforms->at(tn)->probability; ++tn);
+    for (; tn < transforms->size() && p > transforms->at(tn)->probability; ++tn)
+        ;
 
-    Transform* t = transforms->at(tn);
+    Transform *t = transforms->at(tn);
 
     double xt = x * t->m[0][0] + y * t->m[1][0] + t->m[2][0];
     double yt = x * t->m[0][1] + y * t->m[1][1] + t->m[2][1];

@@ -20,9 +20,25 @@ void draw(SimpleScreen& ss)
     ss.UnlockDisplay();
 }
 
+void eventHandler(SimpleScreen &ss, ALLEGRO_EVENT &ev)
+{
+	if (ev.type == ALLEGRO_EVENT_KEY_CHAR)
+	{
+		if (ev.keyboard.keycode == ALLEGRO_KEY_Q)
+		{
+			if (ifs != nullptr)
+			{
+				delete ifs;
+			}
+			exit(0);
+		}
+		ss.Redraw();
+	}
+}
+
 int main()
 {
-    SimpleScreen ss(draw);
+    SimpleScreen ss(draw, eventHandler);
     ss.SetZoomFrame("white", 3);
 
     ss.SetWorldRect(-5, -5, 55, 65);

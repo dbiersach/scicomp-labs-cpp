@@ -21,7 +21,7 @@
 				<Option type="1" />
 				<Option compiler="clang" />
 				<Compiler>
-					<Add option="-O2" />
+					<Add option="-O3" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -30,26 +30,9 @@
 		</Build>
 		<Compiler>
 			<Add option="-m64" />
-			<Add option="-Wall" />
-			<Add option="-std=c++14" />
-			<Add option="-fexceptions" />
-			<Add directory="/usr/include/allegro5" />
 		</Compiler>
 		<Linker>
 			<Add option="-m64" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_acodec.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_audio.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_color.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_dialog.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_font.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_image.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_main.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_memfile.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_physfs.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_primitives.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_ttf.so" />
-			<Add library="/usr/lib/x86_64-linux-gnu/liballegro_video.so" />
 		</Linker>
 		<Unit filename="IteratedFunctionSystem.cpp" />
 		<Unit filename="IteratedFunctionSystem.h" />
@@ -57,9 +40,6 @@
 		<Unit filename="SimpleScreen.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

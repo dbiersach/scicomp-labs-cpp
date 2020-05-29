@@ -72,3 +72,61 @@
 	"stdafx.h"
 	"simplescreen.h"
 
+1590650356 source:/home/scicompuser2/scicomp-labs-cpp/ifs-bnl/ifs.cpp
+	"stdafx.h"
+	"ifs.h"
+
+1590650356 /home/scicompuser2/scicomp-labs-cpp/ifs-bnl/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1590650356 /home/scicompuser2/scicomp-labs-cpp/ifs-bnl/ifs.h
+	"stdafx.h"
+
+1590650356 source:/home/scicompuser2/scicomp-labs-cpp/ifs-bnl/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+	"ifs.h"
+
+1590650356 /home/scicompuser2/scicomp-labs-cpp/ifs-bnl/simplescreen.h
+	"stdafx.h"
+
+1590709248 source:/home/scicompuser2/scicomp-labs-cpp/ifs-bnl/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

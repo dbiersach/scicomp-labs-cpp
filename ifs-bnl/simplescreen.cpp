@@ -257,7 +257,7 @@ SimpleScreen::SimpleScreen(void(*draw)(SimpleScreen& ss),
 	this->eventHandler = eventHandler;
 	redraw = true;
 	exit = false;
-	zoomFrameClr = al_color_name("blue");
+	zoomFrameClr = al_color_name("white");
 	zoomFrameBorderWidth = 2;
 }
 

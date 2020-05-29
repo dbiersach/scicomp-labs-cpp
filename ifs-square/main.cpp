@@ -4,10 +4,10 @@
 
 using namespace std;
 
-IteratedFunctionSystem* ifs = nullptr;
+IteratedFunctionSystem *ifs = nullptr;
 const int iterations = 100000;
 
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     ss.LockDisplay();
     double x = 0, y = 0;
@@ -15,17 +15,32 @@ void draw(SimpleScreen& ss)
     for (int i{}; i < iterations; i++)
     {
         ifs->TransformPoint(x, y, clr);
-        while (x < ss.worldXmin || x > ss.worldXmax
-                || y < ss.worldYmin || y > ss.worldYmax)
+        while (x < ss.worldXmin || x > ss.worldXmax || y < ss.worldYmin || y > ss.worldYmax)
             ifs->TransformPoint(x, y, clr);
         ss.DrawPoint(x, y, clr);
     }
     ss.UnlockDisplay();
 }
 
+void eventHandler(SimpleScreen &ss, ALLEGRO_EVENT &ev)
+{
+    if (ev.type == ALLEGRO_EVENT_KEY_CHAR)
+    {
+        if (ev.keyboard.keycode == ALLEGRO_KEY_Q)
+        {
+            if (ifs != nullptr)
+            {
+                delete ifs;
+            }
+            exit(0);
+        }
+        ss.Redraw();
+    }
+}
+
 int main()
 {
-    SimpleScreen ss(draw);
+    SimpleScreen ss(draw, eventHandler);
     ss.SetZoomFrame("white", 3);
 
     ss.SetWorldRect(-2, -2, 6, 6);
@@ -37,7 +52,9 @@ int main()
     double p = 1. / 4;
 
     ifs->AddMapping(0, 0, 2, 0, 0, 2, "blue", p);
-    // TODO:  Add the remaining three mappings here
+    ifs->AddMapping(2, 0, 4, 0, 2, 2, "yellow", p);
+    ifs->AddMapping(0, 2, 2, 2, 0, 4, "red", p);
+    ifs->AddMapping(0, 0, 0, 0, 0, 0, "green", p);
 
     ifs->GenerateTransforms();
 
