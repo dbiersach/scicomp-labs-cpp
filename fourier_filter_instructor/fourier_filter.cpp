@@ -27,7 +27,6 @@ void InitSamples()
     }
 }
 
-
 void ScaleDomain()
 {
     double delta = (2 * M_PI) / xAct.size();
@@ -37,13 +36,13 @@ void ScaleDomain()
 
 void CalcDFT()
 {
-    const size_t sample_count{ yAct.size() };
-    const size_t term_count{ sample_count / 2 };
+    const size_t sample_count{yAct.size()};
+    const size_t term_count{sample_count / 2};
 
-    for (size_t term{ 0 }; term < term_count; ++term)
+    for (size_t term{0}; term < term_count; ++term)
     {
-        double fcos{ 0 }, fsin{ 0 };
-        for (size_t i{ 0 }; i < sample_count; ++i)
+        double fcos{0}, fsin{0};
+        for (size_t i{0}; i < sample_count; ++i)
         {
             double xs = xRad.at(i);
             double ys = yAct.at(i);
@@ -66,7 +65,8 @@ void ApplyFilter()
 {
     size_t freq_start = 20;
     size_t freq_stop = fCos.size();
-    for (size_t term{freq_start}; term < freq_stop; ++term) {
+    for (size_t term{freq_start}; term < freq_stop; ++term)
+    {
         fCos.at(term) = 0;
         fSin.at(term) = 0;
     }
@@ -74,8 +74,8 @@ void ApplyFilter()
 
 void CalcIDFT()
 {
-    size_t sample_count{ yAct.size() };
-    size_t term_count{ fCos.size() };
+    size_t sample_count{yAct.size()};
+    size_t term_count{fCos.size()};
 
     for (size_t i{}; i < sample_count; ++i)
     {
@@ -92,7 +92,7 @@ void CalcIDFT()
 
 void CalcPowerSpectrum()
 {
-    size_t term_count{ fCos.size() };
+    size_t term_count{fCos.size()};
     for (size_t term{}; term < term_count; ++term)
         yPower.push_back(sqrt(pow(fCos.at(term), 2) + pow(fSin.at(term), 2)));
 }
@@ -158,11 +158,11 @@ void fourier_filter()
 
     CalcDFT();
 
-    ApplyFilter();    
+    ApplyFilter();
 
     CalcPowerSpectrum();
 
     CalcIDFT();
-    
+
     PlotTransforms();
 }
