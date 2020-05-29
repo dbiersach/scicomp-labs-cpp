@@ -35,7 +35,7 @@ void damped_pendulum()
     for (int step{}; step < timeSteps - 1; ++step)
     {
         omega[step + 1] = omega[step] - phaseConstant * theta[step] * deltaTime;
-        theta[step + 1] = theta[step] + omega[step + 1] * deltaTime;
+        theta[step + 1] = theta[step] + omega[step] * deltaTime;
         timeAt[step + 1] = timeAt[step] + deltaTime;
     }
 
