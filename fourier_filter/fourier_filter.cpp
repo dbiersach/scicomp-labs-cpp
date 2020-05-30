@@ -63,11 +63,12 @@ void CalcDFT()
 
 void ApplyFilter()
 {
-    size_t freq_start = 20;
+    size_t freq_start = 0;
     size_t freq_stop = fCos.size();
     for (size_t term{freq_start}; term < freq_stop; ++term)
     {
-        // Insert your code here
+        fCos.at(term) = 0;
+        fSin.at(term) = 0;
     }
 }
 
