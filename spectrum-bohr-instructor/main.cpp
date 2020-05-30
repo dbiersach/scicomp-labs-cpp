@@ -14,6 +14,7 @@ int main()
                       (8 * pow(permittivity, 2) * pow(hPlank, 2));
 
     cout << "Bohr Model Hydrogen Spectral Lines" << endl;
+    cout << fixed << setprecision(0);
 
     for (int i{ 1 }; i < 5; ++i)
     {
@@ -22,9 +23,9 @@ int main()
             double Ei = -E0 / pow(i, 2);
             double Ef = -E0 / pow(f, 2);
             double lambda = hPlank * speedLight / (Ef - Ei) * 1e9;
-            cout << setw(3) << f;
-            cout << setw(10) << setprecision(0) << fixed;
-            cout << lambda << "nm" << endl;
+			cout << setw(3) << f;
+			cout << setw(10) << lambda << "nm";
+			cout << endl;
         }
         // Skip a line between families
         cout << endl;

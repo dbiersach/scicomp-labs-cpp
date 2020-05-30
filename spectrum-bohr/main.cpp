@@ -10,19 +10,21 @@ int main()
 	const double hPlank = 6.63e-34;
 	const double speedLight = 3e8;
 
-	const double E0 = (pow(eCharge, 4)*eMass) /
-		(8 * pow(permittivity, 2) * pow(hPlank, 2));
+	const double E0 = 0;
 
 	cout << "Bohr Model Hydrogen Spectral Lines" << endl;
+	cout << fixed << setprecision(0);
 
-	for (int i{ 1 }; i < 5; ++i) {
-		for (int f{ i + 1 }; f < i + 6; ++f) {
+	for (int i{1}; i < 5; ++i)
+	{
+		for (int f{i + 1}; f < i + 6; ++f)
+		{
 			double Ei = 0;
 			double Ef = 0;
 			double lambda = 0;
 			cout << setw(3) << f;
-			cout << setw(10) << setprecision(0) << fixed;
-			cout << lambda << "nm" << endl;
+			cout << setw(10) << lambda << "nm";
+			cout << endl;
 		}
 		// Skip a line between families
 		cout << endl;

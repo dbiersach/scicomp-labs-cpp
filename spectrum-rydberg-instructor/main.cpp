@@ -7,17 +7,20 @@ int main()
 	const double R = 1.0967757e7;
 
 	cout << "Rydberg Formula Hydrogen Spectral Lines" << endl;
+	cout << fixed << setprecision(0);
 
-	for (int k{ 1 }; k < 5; ++k) {
-		for (int j{ k + 1 }; j < k + 6; ++j) {
+	for (int k{1}; k < 5; ++k)
+	{
+		for (int j{k + 1}; j < k + 6; ++j)
+		{
 			double lambda = 1 / (R * (1 / pow(k, 2) - 1 / pow(j, 2)));
 			cout << setw(3) << j;
-			cout << setw(10) << setprecision(0) << fixed;
-			cout << lambda * 1e9 << "nm" << endl;
+			cout << setw(10) << lambda * 1e9 << "nm"
+			cout << endl;
 		}
 		// Skip a line between families
 		cout << endl;
 	}
 
-    return 0;
+	return 0;
 }
