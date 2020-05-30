@@ -42,10 +42,10 @@ void rk4_lv()
     double t = 0.0;
 
     // Initial prey population %
-    double x = 1.0;
+    double x = 0.0;
 
     // Initial predator population %
-    double y = 0.5;
+    double y = 0.0;
 
     // Stop time (dimensionless)
     double t_stop = 20.0;
