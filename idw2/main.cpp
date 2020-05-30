@@ -21,12 +21,7 @@ FacetSet fSamples, fGrid;
 FacetSet fOceanAct, fOceanActFlip;
 FacetSet fOceanEst, fOceanEstFlip;
 
-enum DrawMode
-{
-    SAMPLES,
-    ACTUAL,
-    ESTIMATED
-};
+enum DrawMode { SAMPLES, ACTUAL, ESTIMATED };
 DrawMode mode = SAMPLES;
 
 double GetActHeight(double x, double z)
@@ -41,10 +36,10 @@ double GetEstHeight(double x, double z)
 
     for (size_t n{}; n < numSamples; ++n)
     {
-        double distance = sqrt(pow(x - samples[n].x, 2) + pow(z - samples[n].z, 2));
+        double distance = sqrt(pow(x - samples[n].x, 2)
+                               + pow(z - samples[n].z, 2));
 
-        if (distance == 0)
-            return samples[n].y;
+        if (distance == 0) return samples[n].y;
 
         double weight = 1 / pow(distance, p);
 
@@ -62,7 +57,7 @@ void CalcEstimatedSurface()
     vOceanEst.clear();
     fOceanEst.clear();
     fOceanEstFlip.clear();
-    for (int iz{intervals - 1}; iz >= 0; --iz)
+    for (int iz{ intervals - 1 }; iz >= 0; --iz)
     {
         for (int ix{}; ix < intervals; ++ix)
         {
@@ -73,8 +68,8 @@ void CalcEstimatedSurface()
             size_t v1 = vOceanEst.add(x, GetEstHeight(x, z), z);
             size_t v2 = vOceanEst.add(x + delta, GetEstHeight(x + delta, z), z);
             size_t v3 = vOceanEst.add(x + delta, GetEstHeight(x + delta, z - delta), z - delta);
-            fOceanEst.add(&vOceanEst, {v0, v1, v2, v3});
-            fOceanEstFlip.add(&vOceanEst, {v0, v3, v2, v1});
+            fOceanEst.add(&vOceanEst, { v0,v1,v2,v3 });
+            fOceanEstFlip.add(&vOceanEst, { v0,v3,v2,v1 });
         }
     }
 }
@@ -83,7 +78,7 @@ double CalcRMSD()
 {
     double rmsd = 0;
     double sumErrors = 0;
-    for (int iz{intervals - 1}; iz >= 0; --iz)
+    for (int iz{ intervals - 1 }; iz >= 0; --iz)
     {
         for (int ix{}; ix < intervals; ++ix)
         {
@@ -98,11 +93,12 @@ double CalcRMSD()
     return rmsd;
 }
 
+
 void InitSamples()
 {
-    seed_seq seed{2017};
-    default_random_engine prng{seed};
-    uniform_int_distribution<int> dist{0, oceanSize};
+    seed_seq seed{ 2017 };
+    default_random_engine prng{ seed };
+    uniform_int_distribution<int> dist{ 0, oceanSize };
 
     // Generate random sample points
     for (size_t i{}; i < numSamples; ++i)
@@ -119,14 +115,14 @@ void InitSamples()
         size_t v1 = vSamples.add(samples[i].x + 2, samples[i].y, samples[i].z);
         size_t v2 = vSamples.add(samples[i].x, samples[i].y, samples[i].z - 2);
         size_t v3 = vSamples.add(samples[i].x - 2, samples[i].y, samples[i].z);
-        fSamples.add(&vSamples, {v0, v1, v2, v3});
+        fSamples.add(&vSamples, { v0,v1,v2,v3 });
     }
 }
 
 void InitStaticSurfaces()
 {
     // Create surface facets starting from the back of the world
-    for (int iz{intervals - 1}; iz >= 0; --iz)
+    for (int iz{ intervals - 1 }; iz >= 0; --iz)
     {
         for (int ix{}; ix < intervals; ++ix)
         {
@@ -138,20 +134,21 @@ void InitStaticSurfaces()
             size_t v1 = vGrid.add(x, gridHeight, z);
             size_t v2 = vGrid.add(x + delta, gridHeight, z);
             size_t v3 = vGrid.add(x + delta, gridHeight, z - delta);
-            fGrid.add(&vGrid, {v0, v1, v2, v3});
+            fGrid.add(&vGrid, { v0,v1,v2,v3 });
 
             // Create Actual Ocean facet at this interval
             v0 = vOceanAct.add(x, GetActHeight(x, z - delta), z - delta);
             v1 = vOceanAct.add(x, GetActHeight(x, z), z);
             v2 = vOceanAct.add(x + delta, GetActHeight(x + delta, z), z);
             v3 = vOceanAct.add(x + delta, GetActHeight(x + delta, z - delta), z - delta);
-            fOceanAct.add(&vOceanAct, {v0, v1, v2, v3});
-            fOceanActFlip.add(&vOceanAct, {v0, v3, v2, v1});
+            fOceanAct.add(&vOceanAct, { v0,v1,v2,v3 });
+            fOceanActFlip.add(&vOceanAct, { v0,v3,v2,v1 });
         }
     }
 }
 
-void draw(SimpleScreen &ss)
+
+void draw(SimpleScreen& ss)
 {
     ALLEGRO_COLOR clrGrid = al_color_name("black");
     ALLEGRO_COLOR clrSample = al_color_name("red");
@@ -197,7 +194,7 @@ void draw(SimpleScreen &ss)
     ss.DrawLines(&fSamples, clrSample, 0, true);
 }
 
-void eventHandler(SimpleScreen &ss, ALLEGRO_EVENT &ev)
+void eventHandler(SimpleScreen& ss, ALLEGRO_EVENT& ev)
 {
     if (ev.type == ALLEGRO_EVENT_KEY_CHAR)
     {
@@ -247,3 +244,4 @@ int main()
 
     return 0;
 }
+

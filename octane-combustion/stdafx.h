@@ -21,7 +21,7 @@
 #include <memory>
 #include <mutex>
 #include <random>
-#include <regex>
+//#include <regex>
 #include <sstream>
 #include <string>
 #include <thread>
@@ -41,3 +41,4 @@
 #include <boost/algorithm/string.hpp>
 #include <boost/range/algorithm_ext/erase.hpp>
 #include <boost/timer.hpp>
+

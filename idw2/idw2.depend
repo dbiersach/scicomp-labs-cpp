@@ -99,3 +99,56 @@
 	"stdafx.h"
 	"SimpleScreen.h"
 
+1590810356 source:/home/scicompuser1/scicomp-labs-cpp/idw2/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+
+1590815339 /home/scicompuser1/scicomp-labs-cpp/idw2/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1590810362 /home/scicompuser1/scicomp-labs-cpp/idw2/simplescreen.h
+	"stdafx.h"
+
+1590815339 source:/home/scicompuser1/scicomp-labs-cpp/idw2/SimpleScreen.cpp
+	"stdafx.h"
+	"SimpleScreen.h"
+
+1590815339 /home/scicompuser1/scicomp-labs-cpp/idw2/SimpleScreen.h
+	"stdafx.h"
+

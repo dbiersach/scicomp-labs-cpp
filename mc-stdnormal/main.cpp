@@ -38,7 +38,7 @@ void draw(SimpleScreen &ss)
         qrng.Next(2, &seed, r);
         double x = r[0] * -2.0 - 1.0;
         double y = r[1] * -0.5;
-        if (y <= f(x))
+        if (true)
         {
             ss.DrawPoint(x, y, "red");
             count++;
@@ -50,7 +50,7 @@ void draw(SimpleScreen &ss)
     ss.UnlockDisplay();
 
     double estArea = (double)count / iterations;
-    double actArea = 0.682689492;
+    double actArea = 1.0;
     double err = (actArea - estArea) / actArea * 100;
 
     cout << "Std Normal 1st Deviation Area QRNG" << endl

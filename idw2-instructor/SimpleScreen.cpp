@@ -1,5 +1,7 @@
+// SimpleScreen.cpp
+
 #include "stdafx.h"
-#include "simplescreen.h"
+#include "SimpleScreen.h"
 
 using namespace std;
 
@@ -41,7 +43,7 @@ UnitVector::UnitVector()
 {
 }
 
-UnitVector::UnitVector(Point3D *tail, Point3D *tip)
+UnitVector::UnitVector(Point3D* tail, Point3D* tip)
 {
     x = tip->x - tail->x;
     y = tip->y - tail->y;
@@ -61,9 +63,9 @@ void UnitVector::normalize()
     z /= magnitude;
 }
 
-UnitVector *UnitVector::crossProduct(UnitVector *other)
+UnitVector* UnitVector::crossProduct(UnitVector* other)
 {
-    UnitVector *C = new UnitVector();
+    UnitVector* C = new UnitVector();
     C->x = this->y * other->z - this->z * other->y;
     C->y = this->z * other->x - this->x * other->z;
     C->z = this->x * other->y - this->y * other->x;
@@ -71,7 +73,7 @@ UnitVector *UnitVector::crossProduct(UnitVector *other)
     return C;
 }
 
-double UnitVector::dotProduct(UnitVector *other)
+double UnitVector::dotProduct(UnitVector* other)
 {
     return this->x * other->x + this->y * other->y + this->z * other->z;
 }
@@ -79,7 +81,7 @@ double UnitVector::dotProduct(UnitVector *other)
 // PointSet
 PointSet::PointSet()
 {
-    points = new vector<Point2D *>();
+    points = new vector<Point2D*>();
 }
 
 PointSet::~PointSet()
@@ -88,7 +90,7 @@ PointSet::~PointSet()
     delete points;
 }
 
-Point2D *PointSet::at(size_t i)
+Point2D* PointSet::at(size_t i)
 {
     return points->at(i);
 }
@@ -98,14 +100,16 @@ void PointSet::clear()
     points->clear();
 }
 
-void PointSet::add(double x, double y)
+size_t PointSet::add(double x, double y)
 {
     points->push_back(new Point2D(x, y));
+    return points->size() - 1;
 }
 
-void PointSet::add(Point2D *pt)
+size_t PointSet::add(Point2D* pt)
 {
     points->push_back(pt);
+    return points->size() - 1;
 }
 
 size_t PointSet::size()
@@ -116,7 +120,7 @@ size_t PointSet::size()
 // PointSet3D
 PointSet3D::PointSet3D()
 {
-    points = new vector<Point3D *>();
+    points = new vector<Point3D*>();
 }
 
 PointSet3D::~PointSet3D()
@@ -125,7 +129,7 @@ PointSet3D::~PointSet3D()
     delete points;
 }
 
-Point3D *PointSet3D::at(size_t i)
+Point3D* PointSet3D::at(size_t i)
 {
     return points->at(i);
 }
@@ -135,14 +139,16 @@ void PointSet3D::clear()
     points->clear();
 }
 
-void PointSet3D::add(double x, double y, double z)
+size_t PointSet3D::add(double x, double y, double z)
 {
     points->push_back(new Point3D(x, y, z));
+    return points->size() - 1;
 }
 
-void PointSet3D::add(Point3D *p3d)
+size_t PointSet3D::add(Point3D* p3d)
 {
     points->push_back(p3d);
+    return points->size() - 1;
 }
 
 size_t PointSet3D::size()
@@ -188,8 +194,8 @@ Facet::Facet()
     points = new PointSet3D();
 }
 
-Facet::Facet(PointSet3D *allVertices, vector<size_t> vertexNumbers)
-    : Facet()
+Facet::Facet(PointSet3D* allVertices, vector<size_t> vertexNumbers)
+    :Facet()
 {
     for (size_t v : vertexNumbers)
         points->add(allVertices->at(v));
@@ -201,12 +207,12 @@ Facet::~Facet()
     delete points;
 }
 
-Point3D *Facet::at(size_t i)
+Point3D* Facet::at(size_t i)
 {
     return points->at(i);
 }
 
-PointSet3D *Facet::all()
+PointSet3D* Facet::all()
 {
     return points;
 }
@@ -221,9 +227,9 @@ size_t Facet::size()
     return points->size();
 }
 
-Point3D *Facet::center()
+Point3D* Facet::center()
 {
-    size_t count = points->size();
+    int count = points->size();
     double sumX{}, sumY{}, sumZ{};
     for (int i{}; i < count; i++)
     {
@@ -234,17 +240,17 @@ Point3D *Facet::center()
     return new Point3D(sumX / count, sumY / count, sumZ / count);
 }
 
-UnitVector *Facet::surfaceNormal()
+UnitVector* Facet::surfaceNormal()
 {
-    UnitVector *vectorA = new UnitVector(points->at(0), points->at(1));
-    UnitVector *vectorB = new UnitVector(points->at(0), points->at(2));
+    UnitVector* vectorA = new UnitVector(points->at(0), points->at(1));
+    UnitVector* vectorB = new UnitVector(points->at(0), points->at(2));
     return vectorA->crossProduct(vectorB);
 }
 
 // FacetSet
 FacetSet::FacetSet()
 {
-    facets = new vector<Facet *>();
+    facets = new vector<Facet*>();
 }
 
 FacetSet::~FacetSet()
@@ -253,19 +259,21 @@ FacetSet::~FacetSet()
     delete facets;
 }
 
-Facet *FacetSet::at(size_t i)
+Facet* FacetSet::at(size_t i)
 {
     return facets->at(i);
 }
 
-PointSet3D *FacetSet::vertices(size_t facetNumber)
+
+PointSet3D* FacetSet::vertices(size_t facetNumber)
 {
     return facets->at(facetNumber)->all();
 }
 
-void FacetSet::add(PointSet3D *allVertices, vector<size_t> vertexNumbers)
+size_t FacetSet::add(PointSet3D* allVertices, vector<size_t> vertexNumbers)
 {
     facets->push_back(new Facet(allVertices, vertexNumbers));
+    return facets->size() - 1;
 }
 
 void FacetSet::clear()
@@ -278,30 +286,45 @@ size_t FacetSet::size()
     return facets->size();
 }
 
+
 // SimpleScreen
-SimpleScreen::SimpleScreen(void (*draw)(SimpleScreen &ss),
-                           void (*eventHandler)(SimpleScreen &ss, ALLEGRO_EVENT &ev))
+SimpleScreen::SimpleScreen(void(*draw)(SimpleScreen& ss),
+                           void(*eventHandler)(SimpleScreen& ss, ALLEGRO_EVENT& ev),
+                           bool antiAlias)
 {
     al_init();
+
     al_init_primitives_addon();
     al_install_mouse();
     al_install_keyboard();
     al_init_image_addon();
     al_init_native_dialog_addon();
+
+    if (antiAlias)
+    {
+        al_set_new_display_option(ALLEGRO_SAMPLE_BUFFERS, 1, ALLEGRO_SUGGEST);
+        al_set_new_display_option(ALLEGRO_SAMPLES, 4, ALLEGRO_SUGGEST);
+    }
+
     display = al_create_display(screenWidth, screenHeight);
+
     event_queue = al_create_event_queue();
     al_register_event_source(event_queue, al_get_display_event_source(display));
     al_register_event_source(event_queue, al_get_mouse_event_source());
     al_register_event_source(event_queue, al_get_keyboard_event_source());
+
+    screenColor = al_map_rgb(212, 208, 200);
     Clear();
-    points = new vector<Point2D *>();
+
     SetProjection();
+    SetZoomFrame("white", 3);
+
+    points = new vector<Point2D*>();
+
     this->draw = draw;
     this->eventHandler = eventHandler;
     redraw = true;
     exit = false;
-    zoomFrameClr = al_color_name("blue");
-    zoomFrameBorderWidth = 2;
 }
 
 SimpleScreen::~SimpleScreen()
@@ -330,7 +353,7 @@ void SimpleScreen::SetWorldRect(double xMin, double yMin,
 
 void SimpleScreen::GetWorldRect()
 {
-    Rectangle &r = worldRects.back();
+    Rectangle& r = worldRects.back();
     worldXmin = r.xMin;
     worldYmin = r.yMin;
     worldXmax = r.xMax;
@@ -360,6 +383,11 @@ void SimpleScreen::SetZoomFrame(string clr, double width)
     zoomFrameBorderWidth = width;
 }
 
+void SimpleScreen::SetWindowTitle(string title)
+{
+    al_set_window_title(display, title.c_str());
+}
+
 void SimpleScreen::LockDisplay()
 {
     lr = al_lock_bitmap(al_get_backbuffer(display),
@@ -378,8 +406,7 @@ void SimpleScreen::UnlockDisplay()
 
 void SimpleScreen::Clear()
 {
-    //al_clear_to_color(al_map_rgb(0, 0, 0));
-    al_clear_to_color(al_map_rgb(212, 208, 200));
+    al_clear_to_color(screenColor);
 }
 
 void SimpleScreen::Update()
@@ -403,17 +430,11 @@ void SimpleScreen::HandleEvents()
     ALLEGRO_EVENT ev;
     Point2D dragBegin;
     Point2D dragEnd;
-    ALLEGRO_BITMAP *image2{nullptr};
+    ALLEGRO_BITMAP* image2{ nullptr };
 
     bool isZooming = false;
     while (!exit)
     {
-        // Check for quit
-        if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
-        {
-            exit = true;
-            break;
-        }
         // If necessary, call user provided draw method
         if (redraw)
         {
@@ -439,7 +460,14 @@ void SimpleScreen::HandleEvents()
                 dragBegin.y = ev.mouse.y;
                 if (image2 != nullptr)
                     al_destroy_bitmap(image2);
-                image2 = al_clone_bitmap(al_get_backbuffer(display));
+                ALLEGRO_BITMAP* bb = al_get_backbuffer(display);
+                //int f = al_get_new_bitmap_flags();
+                al_set_new_bitmap_flags(ALLEGRO_VIDEO_BITMAP);
+                image2 = al_create_bitmap(al_get_bitmap_width(bb), al_get_bitmap_height(bb));
+                al_set_target_bitmap(image2);
+                al_draw_bitmap(bb, 0, 0, 0);
+                al_set_target_bitmap(bb);
+                //image2 = al_clone_bitmap(al_get_backbuffer(display));
                 continue;
             }
             // If right mouse button was pressed, revert to prior zoom level if possible
@@ -494,20 +522,17 @@ void SimpleScreen::HandleEvents()
         al_destroy_bitmap(image2);
 }
 
+
 bool SimpleScreen::Contains(double x, double y)
 {
-    if (x < worldXmin)
-        return false;
-    if (x > worldXmax)
-        return false;
-    if (y < worldYmin)
-        return false;
-    if (y > worldYmax)
-        return false;
+    if (x < worldXmin) return false;
+    if (x > worldXmax) return false;
+    if (y < worldYmin) return false;
+    if (y > worldYmax) return false;
     return true;
 }
 
-void SimpleScreen::CalcScreenPoints(PointSet *ps)
+void SimpleScreen::CalcScreenPoints(PointSet* ps)
 {
     points->clear();
     for (size_t i{}; i < ps->size(); ++i)
@@ -520,15 +545,14 @@ void SimpleScreen::CalcScreenPoints(PointSet *ps)
     }
 }
 
-void SimpleScreen::CalcScreenPoints3D(PointSet3D *ps3d)
+void SimpleScreen::CalcScreenPoints3D(PointSet3D* ps3d)
 {
     points->clear();
     for (size_t i{}; i < ps3d->size(); ++i)
     {
         // Convert WORLD coordinates to SCREEN coordinates
         double screenX = (ps3d->at(i)->x -
-                          ps3d->at(i)->z * obliqueCos * aspectCorrection - worldXmin) *
-                         scaleX;
+                          ps3d->at(i)->z * obliqueCos * aspectCorrection - worldXmin) * scaleX;
         double screenY = screenHeight -
                          (ps3d->at(i)->y - ps3d->at(i)->z * obliqueSin - worldYmin) * scaleY;
         // Add this SCREEN coordinate to array of points
@@ -538,16 +562,14 @@ void SimpleScreen::CalcScreenPoints3D(PointSet3D *ps3d)
 
 void SimpleScreen::DrawAxes(string clr, float width)
 {
-    // Draw X axis
     double screenY0 = screenHeight + worldYmin * scaleY;
     al_draw_line(1, screenY0, screenWidth, screenY0, al_color_name(clr.c_str()), width);
-    // Draw Y axis
     double screenX0 = -worldXmin * scaleX;
     al_draw_line(screenX0, 1, screenX0, screenHeight, al_color_name(clr.c_str()), width);
     al_flip_display();
 }
 
-void SimpleScreen::DrawLine(Point2D &a, Point2D &b, string clr, float width)
+void SimpleScreen::DrawLine(Point2D& a, Point2D& b, string clr, float width)
 {
     PointSet ps;
     ps.add(&a);
@@ -555,12 +577,11 @@ void SimpleScreen::DrawLine(Point2D &a, Point2D &b, string clr, float width)
     DrawLines(&ps, clr, width, false, false, 0);
 }
 
-void SimpleScreen::DrawLines(PointSet *ps, string clr, float width,
+void SimpleScreen::DrawLines(PointSet* ps, string clr, float width,
                              bool close, bool fill, long delay)
 {
     CalcScreenPoints(ps);
-    if (fill)
-        close = true;
+    if (fill) close = true;
     if (close)
     {
         vector<float> verts;
@@ -570,16 +591,11 @@ void SimpleScreen::DrawLines(PointSet *ps, string clr, float width,
             verts.push_back(points->at(i)->y);
         }
         if (fill)
-        {
-            al_draw_filled_polygon(&verts[0], (int)ps->size(), al_color_name(clr.c_str()));
-        }
+            al_draw_filled_polygon(&verts[0], ps->size(), al_color_name(clr.c_str()));
         else
-        {
-            al_draw_polygon(&verts[0], (int)ps->size(), ALLEGRO_LINE_JOIN_ROUND, al_color_name(clr.c_str()), width, 0);
-        }
+            al_draw_polygon(&verts[0], ps->size(), ALLEGRO_LINE_JOIN_ROUND, al_color_name(clr.c_str()), width, 0);
     }
     else
-    {
         for (size_t i{}; i < points->size() - 1; ++i)
         {
             al_draw_line(points->at(i)->x, points->at(i)->y,
@@ -590,39 +606,9 @@ void SimpleScreen::DrawLines(PointSet *ps, string clr, float width,
                 this_thread::sleep_for(chrono::milliseconds(delay));
             }
         }
-    }
 }
 
-void SimpleScreen::DrawLines(FacetSet *facets, std::string clr,
-                             float width, bool fill, long delay)
-{
-    for (size_t f{}; f < facets->size(); ++f)
-    {
-        CalcScreenPoints3D(facets->at(f)->all());
-        vector<float> verts;
-        for (size_t i{}; i < points->size(); ++i)
-        {
-            verts.push_back(points->at(i)->x);
-            verts.push_back(points->at(i)->y);
-        }
-        if (fill)
-        {
-            al_draw_filled_polygon(&verts[0], (int)points->size(), al_color_name(clr.c_str()));
-        }
-        else
-        {
-            al_draw_polygon(&verts[0], (int)points->size(),
-                            ALLEGRO_LINE_JOIN_ROUND, al_color_name(clr.c_str()), width, 0);
-        }
-        if (delay > 0)
-        {
-            al_flip_display();
-            this_thread::sleep_for(chrono::milliseconds(delay));
-        }
-    }
-}
-
-void SimpleScreen::DrawLines(Facet *f, ALLEGRO_COLOR clr, float width,
+void SimpleScreen::DrawLines(Facet* f, ALLEGRO_COLOR clr, float width,
                              bool fill, long delay)
 {
     CalcScreenPoints3D(f->all());
@@ -633,13 +619,10 @@ void SimpleScreen::DrawLines(Facet *f, ALLEGRO_COLOR clr, float width,
         verts.push_back(points->at(i)->y);
     }
     if (fill)
-    {
-        al_draw_filled_polygon(&verts[0], (int)points->size(), clr);
-    }
+        al_draw_filled_polygon(&verts[0], points->size(), clr);
+
     else
-    {
-        al_draw_polygon(&verts[0], (int)points->size(), ALLEGRO_LINE_JOIN_ROUND, clr, width, 0);
-    }
+        al_draw_polygon(&verts[0], points->size(), ALLEGRO_LINE_JOIN_ROUND, clr, width, 0);
     if (delay > 0)
     {
         al_flip_display();
@@ -647,32 +630,81 @@ void SimpleScreen::DrawLines(Facet *f, ALLEGRO_COLOR clr, float width,
     }
 }
 
-void SimpleScreen::DrawFacet(Facet *f, ALLEGRO_COLOR clrMin, ALLEGRO_COLOR clrMax,
+void SimpleScreen::DrawLines(Facet* f, string clr, float width,
+                             bool fill, long delay)
+{
+    ALLEGRO_COLOR al_clr = al_color_name(clr.c_str());
+    DrawLines(f, al_clr, width, fill, delay);
+}
+
+void SimpleScreen::DrawLines(FacetSet* facets, ALLEGRO_COLOR clr,
+                             float width, bool fill, long delay)
+{
+    for (size_t f{}; f < facets->size(); ++f)
+        DrawLines(facets->at(f), clr, width, fill, delay);
+}
+
+void SimpleScreen::DrawLines(FacetSet* facets, std::string clr,
+                             float width, bool fill, long delay)
+{
+    ALLEGRO_COLOR al_clr = al_color_name(clr.c_str());
+    DrawLines(facets, al_clr, width, fill, delay);
+}
+
+void SimpleScreen::DrawFacet(Facet* f, ALLEGRO_COLOR clrMin, ALLEGRO_COLOR clrMax,
                              float width, bool culled, bool shaded, long delay)
 {
-    if (shaded)
-        culled = true;
-    UnitVector *cameraVector = new UnitVector(f->center(), cameraLocation);
-    double dotProduct = cameraVector->dotProduct(f->surfaceNormal());
     ALLEGRO_COLOR clr = clrMax;
-    if (shaded && dotProduct >= 0)
-    {
-        // Adjust the brightness of this facet based upon dotProduct
-        float red = (clrMax.r - clrMin.r) * dotProduct + clrMin.r;
-        float green = (clrMax.g - clrMin.g) * dotProduct + clrMin.g;
-        float blue = (clrMax.b - clrMin.b) * dotProduct + clrMin.b;
-        clr = al_map_rgb_f(red, green, blue);
-    }
-    if (!culled || dotProduct >= 0)
-    {
+    if (!culled)
         DrawLines(f, clr, width, shaded, delay);
+    else
+    {
+        UnitVector* cameraVector = new UnitVector(f->center(), cameraLocation);
+        double dotProduct = cameraVector->dotProduct(f->surfaceNormal());
+        if (dotProduct >= 0)
+        {
+            if (shaded)
+            {
+                // Adjust the brightness of this facet based upon dotProduct
+                float red = (clrMax.r - clrMin.r) * dotProduct + clrMin.r;
+                float green = (clrMax.g - clrMin.g) * dotProduct + clrMin.g;
+                float blue = (clrMax.b - clrMin.b) * dotProduct + clrMin.b;
+                clr = al_map_rgb_f(red, green, blue);
+                DrawLines(f, clr, width, shaded, delay);
+            }
+            DrawLines(f, clr, width, shaded, delay);
+        }
+    }
+}
+
+void SimpleScreen::DrawFacets(FacetSet* fs, ALLEGRO_COLOR clrMin, ALLEGRO_COLOR clrMax,
+                              float width, bool culled, bool shaded, long delay)
+{
+    for (size_t f{}; f < fs->size(); f++)
+        DrawFacet(fs->at(f), clrMin, clrMax, width, culled, shaded, delay);
+}
+
+void SimpleScreen::DrawFacets(FacetSet* fs, ALLEGRO_COLOR al_clr,
+                              float width, bool culled, bool shaded, long delay)
+{
+    for (size_t f{}; f < fs->size(); f++)
+        DrawFacet(fs->at(f), al_clr, al_clr, width, culled, shaded, delay);
+}
+
+void SimpleScreen::DrawFacets(FacetSet* fs, string clr,
+                              float width, bool culled, bool shaded, long delay)
+{
+    ALLEGRO_COLOR al_clr = al_color_name(clr.c_str());
+    for (size_t f{}; f < fs->size(); f++)
+    {
+        DrawFacet(fs->at(f), al_clr, al_clr, width, culled, shaded, delay);
     }
 }
 
 void SimpleScreen::DrawRectangle(string clr, double xMin, double yMin,
                                  double width, double height, int borderWidth, bool fill)
 {
-    PointSet *ps = new PointSet();
+    PointSet* ps = new PointSet();
     ps->add(xMin, yMin);
     ps->add(xMin + width, yMin);
     ps->add(xMin + width, yMin + height);
@@ -683,7 +715,7 @@ void SimpleScreen::DrawRectangle(string clr, double xMin, double yMin,
 void SimpleScreen::DrawCircle(double centerX, double centerY,
                               double radius, string clr, int width)
 {
-    PointSet *psCircle = new PointSet();
+    PointSet* psCircle = new PointSet();
     const int intervals = 97;
     const double deltaTheta = 2.0 * M_PI / intervals;
     for (int i{}; i < intervals; ++i)
@@ -705,7 +737,7 @@ void SimpleScreen::DrawPoint(double x, double y, string clr)
     al_put_pixel(screenX, screenY, al_color_name(clr.c_str()));
 }
 
-void SimpleScreen::DrawPoint(double x, double y, ALLEGRO_COLOR &clr)
+void SimpleScreen::DrawPoint(double x, double y, ALLEGRO_COLOR& clr)
 {
     x -= 0.5 / scaleX;
     y += 0.5 / scaleY;
@@ -721,7 +753,7 @@ void SimpleScreen::DrawPoint3D(double x, double y, double z, string clr)
     al_put_pixel(screenX, screenY, al_color_name(clr.c_str()));
 }
 
-void SimpleScreen::DrawPoint3D(double x, double y, double z, ALLEGRO_COLOR &clr)
+void SimpleScreen::DrawPoint3D(double x, double y, double z, ALLEGRO_COLOR& clr)
 {
     double screenX = (x - z * obliqueCos * aspectCorrection - worldXmin) * scaleX;
     double screenY = screenHeight - (y - z * obliqueSin - worldYmin) * scaleY;

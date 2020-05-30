@@ -32,9 +32,6 @@
 		<Unit filename="SimpleScreen.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="stdafx.h" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

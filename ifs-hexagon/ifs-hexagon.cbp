@@ -34,11 +34,11 @@
 		<Linker>
 			<Add option="-m64" />
 		</Linker>
-		<Unit filename="IteratedFunctionSystem.cpp" />
-		<Unit filename="IteratedFunctionSystem.h" />
-		<Unit filename="SimpleScreen.cpp" />
-		<Unit filename="SimpleScreen.h" />
+		<Unit filename="ifs.cpp" />
+		<Unit filename="ifs.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="simplescreen.cpp" />
+		<Unit filename="simplescreen.h" />
 		<Unit filename="stdafx.h" />
 		<Extensions />
 	</Project>

@@ -5,16 +5,15 @@
 using namespace std;
 
 int num_clusters{3};
-double mean_multiple{1};
+double mean_multiple{0};
 
 vector<DataPoint*>* dataPoints{};
 vector<Cluster*>* clusters{};
 bool converged{};
 
-double GetDistance(double x1, double y1, double x2, double y2)
+double GetDistance(double x1, double y1, double x2, double y2 )
 {
-    // TODO: Write code to return the Manhattan distance
-    // between the Cartesian coordinates (x1,y2) and (x2,y2)
+    return 0;
 }
 
 void InitDataPoints()

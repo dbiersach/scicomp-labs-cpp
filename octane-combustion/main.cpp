@@ -2,20 +2,27 @@
 
 using namespace std;
 
-vector<vector<int>> *eqn;
-vector<vector<int>> *stack;
-ifstream *infile;
+vector<vector<int>>* eqn;
+vector<vector<int>>* stack;
+ifstream* infile;
 
-void OpenDataFile(string filename)
+void OpenDataFile(int argc, char *argv[])
 {
+    // Ensure user has provided a filename
+    if (argc < 2)
+    {
+        cout << "Error: Missing equation filename";
+        exit(-1);
+    }
+
+    string filename{ argv[1] };
     infile = new ifstream(filename);
 
     // Ensure the file can be opened
     if (!infile->is_open())
     {
         cout << "Error: Unable to open file "
-                "\""
-             << filename << "\"" << endl;
+             "\"" << filename << "\"" << endl;
         exit(-1);
     }
 }
@@ -28,9 +35,9 @@ void LoadEquation()
     eqn = new vector<vector<int>>(constraints);
     vector<int> constraint(unknowns);
 
-    for (auto &e : *eqn)
+    for (auto& e : *eqn)
     {
-        for (auto &c : constraint)
+        for (auto& c : constraint)
             *infile >> c;
         e = constraint;
     }
@@ -40,7 +47,7 @@ void InitStack()
 {
     stack = new vector<vector<int>>();
     for (size_t i{}; i < eqn->front().size(); ++i)
-        stack->push_back({1, eqn->back().at(i) + 1});
+        stack->push_back({ 1,eqn->back().at(i) + 1 });
 }
 
 bool IsSolution()
@@ -61,7 +68,8 @@ bool FindSolution()
     int stackLevel = 0;
     while (stackLevel >= 0)
     {
-        while (stack->at(stackLevel).at(0) < stack->at(stackLevel).at(1))
+        while (stack->at(stackLevel).at(0)
+                < stack->at(stackLevel).at(1))
         {
             if (stackLevel == (int)stack->size() - 1)
                 break;
@@ -73,7 +81,8 @@ bool FindSolution()
             return true;
 
         stack->at(stackLevel).at(0)++;
-        while (stack->at(stackLevel).at(0) == stack->at(stackLevel).at(1))
+        while (stack->at(stackLevel).at(0)
+                == stack->at(stackLevel).at(1))
         {
             stackLevel--;
             if (stackLevel < 0)
@@ -93,7 +102,7 @@ void PrintUnknowns()
 
 int main(int argc, char *argv[])
 {
-    OpenDataFile("octane.txt");
+    OpenDataFile(argc, argv);
 
     LoadEquation();
 

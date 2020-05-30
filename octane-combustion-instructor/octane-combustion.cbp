@@ -28,21 +28,9 @@
 				</Linker>
 			</Target>
 		</Build>
-		<Compiler>
-			<Add option="-m64" />
-			<Add option="-Wall" />
-			<Add option="-std=c++14" />
-			<Add option="-fexceptions" />
-		</Compiler>
-		<Linker>
-			<Add option="-m64" />
-		</Linker>
 		<Unit filename="main.cpp" />
 		<Unit filename="octane.txt" />
 		<Unit filename="stdafx.h" />
-		<Extensions>
-			<code_completion />
-			<debugger />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -113,3 +113,62 @@
 	"stdafx.h"
 	"simplescreen.h"
 
+1590808767 source:/home/scicompuser1/scicomp-labs-cpp/mc-stdnormal/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
+	"niederreiter.h"
+
+1590808767 /home/scicompuser1/scicomp-labs-cpp/mc-stdnormal/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<filesystem>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<regex>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+	<allegro5/allegro.h>
+	<allegro5/allegro_color.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_primitives.h>
+	<allegro5/color.h>
+	<boost/algorithm/string.hpp>
+	<boost/range/algorithm_ext/erase.hpp>
+	<boost/timer.hpp>
+
+1590808767 /home/scicompuser1/scicomp-labs-cpp/mc-stdnormal/simplescreen.h
+	"stdafx.h"
+
+1590808767 /home/scicompuser1/scicomp-labs-cpp/mc-stdnormal/niederreiter.h
+
+1590808767 source:/home/scicompuser1/scicomp-labs-cpp/mc-stdnormal/niederreiter.cpp
+	"stdafx.h"
+	"niederreiter.h"
+
+1590808767 source:/home/scicompuser1/scicomp-labs-cpp/mc-stdnormal/simplescreen.cpp
+	"stdafx.h"
+	"simplescreen.h"
+

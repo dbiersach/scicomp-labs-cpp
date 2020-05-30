@@ -168,9 +168,9 @@ int main()
 
     cout << endl;
     cout << "Constant acceleration = "
-         << " m/s^2" << endl;
+         << 2 * a << " m/s^2" << endl;
     cout << "Initial velocity      = "
-         << " m/s" << endl;
+         << b << " m/s" << endl;
     cout << endl;
 
     return 0;

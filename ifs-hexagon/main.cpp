@@ -1,6 +1,6 @@
 #include "stdafx.h"
-#include "SimpleScreen.h"
-#include "IteratedFunctionSystem.h"
+#include "simplescreen.h"
+#include "ifs.h"
 
 using namespace std;
 
