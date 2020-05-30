@@ -9,7 +9,7 @@ double f(double x)
     return 0;
 }
 
-void draw(SimpleScreen& ss)
+void draw(SimpleScreen &ss)
 {
     ss.DrawAxes();
 
@@ -57,9 +57,9 @@ void draw(SimpleScreen& ss)
          << "Iterations = " << iterations << endl
          << "Est. Area  = " << estArea << endl
          << "Act. Area  = " << actArea << endl
-         << "Abs. % Err = " << abs(err) << endl << endl;
+         << "Abs. % Err = " << abs(err) << endl
+         << endl;
 }
-
 
 int main()
 {
@@ -74,4 +74,3 @@ int main()
 
     return 0;
 }
-

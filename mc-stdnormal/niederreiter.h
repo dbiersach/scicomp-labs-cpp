@@ -7,7 +7,7 @@ public:
     ~Niederreiter();
 
     void Next(int dim_num, int *seed, double quasi[]);
-    double* All(int dim_num, int n, int* seed);
+    double *All(int dim_num, int n, int *seed);
 
 private:
     static const int MAXDEG = 50;
