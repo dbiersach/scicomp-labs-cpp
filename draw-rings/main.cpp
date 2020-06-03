@@ -9,15 +9,15 @@ void draw(SimpleScreen& ss)
     int width{ 15 };
 
     // You must determine proper offsets
-    double ringOffsetFullX{radius * 5. / 2};
-    double ringOffsetHalfX{radius * 5. / 4};
-    double ringOffsetY{-radius};
+    double ringOffsetFullX{};
+    double ringOffsetHalfX{};
+    double ringOffsetY{};
 
     ss.DrawCircle(0, 0, radius, "black", width);
     ss.DrawCircle(-ringOffsetFullX, 0, radius, "blue", width);
     ss.DrawCircle(ringOffsetFullX, 0, radius, "red", width);
-    ss.DrawCircle(-ringOffsetHalfX, ringOffsetY, radius, "yellow", width);
-    ss.DrawCircle(ringOffsetHalfX, ringOffsetY, radius, "green", width);
+    ss.DrawCircle(-ringOffsetHalfX, -ringOffsetY, radius, "yellow", width);
+    ss.DrawCircle(ringOffsetHalfX, -ringOffsetY, radius, "green", width);
 }
 
 int main()

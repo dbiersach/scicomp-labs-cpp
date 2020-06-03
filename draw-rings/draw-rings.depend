@@ -66,11 +66,11 @@
 	"stdafx.h"
 	"SimpleScreen.h"
 
-1588363505 source:/home/scicompuser1/scicomp-labs-cpp/draw-rings/simplescreen.cpp
+1590968068 source:/home/scicompuser1/scicomp-labs-cpp/draw-rings/simplescreen.cpp
 	"stdafx.h"
 	"simplescreen.h"
 
-1588475569 /home/scicompuser1/scicomp-labs-cpp/draw-rings/stdafx.h
+1590968068 /home/scicompuser1/scicomp-labs-cpp/draw-rings/stdafx.h
 	<algorithm>
 	<array>
 	<atomic>
@@ -109,6 +109,10 @@
 	<boost/range/algorithm_ext/erase.hpp>
 	<boost/timer.hpp>
 
-1588363505 /home/scicompuser1/scicomp-labs-cpp/draw-rings/simplescreen.h
+1590968068 /home/scicompuser1/scicomp-labs-cpp/draw-rings/simplescreen.h
 	"stdafx.h"
+
+1590968068 source:/home/scicompuser1/scicomp-labs-cpp/draw-rings/main.cpp
+	"stdafx.h"
+	"simplescreen.h"
 
