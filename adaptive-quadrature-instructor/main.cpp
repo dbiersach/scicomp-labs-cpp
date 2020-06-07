@@ -29,15 +29,15 @@ double midpointFixed(double a, double b)
 
 double midpointAdaptive(double a, double b)
 {
-    double maxDiff = 1e-03;
-    double dx = 1;
+    double maxPercentChange = 1e-03;
+    double dx = 1.0;
     double area = 0;
     double x = a;
     while (x < b)
     {
         double f1 = f(x);
         double f2 = f(x + dx);
-        while (abs(f2 - f1) > maxDiff)
+        while (abs((f2 - f1) / f1) > maxPercentChange)
         {
             // Keep halving dx if current delta is too great
             dx /= 2;
@@ -46,8 +46,8 @@ double midpointAdaptive(double a, double b)
         // Use the midpoint rule
         area += f(x + dx / 2) * dx;
         x += dx;
-        // Expand current internval width
-        dx *= 4;
+        // Expand current interval width
+        dx *= 2;
     }
     return area;
 }

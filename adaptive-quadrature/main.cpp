@@ -26,11 +26,10 @@ double midpointFixed(double a, double b)
     }
     return area;
 }
-
 double midpointAdaptive(double a, double b)
 {
-    double maxDiff = 1e-03;
-    double dx = 1;
+    double maxPercentChange = 1e-03;
+    double dx = 1.0;
     double area = 0;
     double x = a;
     while (x < b)
