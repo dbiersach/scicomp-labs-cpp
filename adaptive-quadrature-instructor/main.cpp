@@ -27,7 +27,7 @@ double midpointFixed(double a, double b)
     return area;
 }
 
-double midpointAdpative(double a, double b)
+double midpointAdaptive(double a, double b)
 {
     double maxSlope = 1e-3;
     double dx = 1;
@@ -37,7 +37,7 @@ double midpointAdpative(double a, double b)
     {
         double f1 = f(x);
         double f2 = f(x + dx);
-        // Keep halving dx if current slope is too greate
+        // Keep halving dx if current slope is too great
         while (abs((f2 - f1) / (x + dx)) > maxSlope)
         {
             dx /= 2;
@@ -70,7 +70,8 @@ int main()
     double areaAdaptive = midpointAdpative(a, b);
     cout << "Integral using adaptive width midpoint rule =\t"
          << fixed << setprecision(15)
-         << areaAdaptive	<< endl << endl;
+         << areaAdaptive << endl
+         << endl;
 
     cout << "% Relative Error Fixed =\t"
          << fixed << setprecision(15)
@@ -80,7 +81,8 @@ int main()
     cout << "% Relative Error Adaptive =\t"
          << fixed << setprecision(15)
          << abs((areaActual - areaAdaptive)) / areaActual * 100
-         << endl << endl;
+         << endl
+         << endl;
 
     return 0;
 }
