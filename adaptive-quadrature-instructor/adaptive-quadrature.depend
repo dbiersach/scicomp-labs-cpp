@@ -58,10 +58,10 @@
 	<TString.h>
 	<TStyle.h>
 
-1588908575 source:/home/scicompuser1/scicomp-labs-cpp/adaptive-quadrature-instructor/main.cpp
+1591507769 source:/home/scicompuser1/scicomp-labs-cpp/adaptive-quadrature-instructor/main.cpp
 	"stdafx.h"
 
-1588908575 /home/scicompuser1/scicomp-labs-cpp/adaptive-quadrature-instructor/stdafx.h
+1590968068 /home/scicompuser1/scicomp-labs-cpp/adaptive-quadrature-instructor/stdafx.h
 	<algorithm>
 	<array>
 	<atomic>

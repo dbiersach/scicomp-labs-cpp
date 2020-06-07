@@ -29,7 +29,7 @@ double midpointFixed(double a, double b)
 
 double midpointAdaptive(double a, double b)
 {
-    double maxSlope = 1e-3;
+    double maxDiff = 1e-03;
     double dx = 1;
     double area = 0;
     double x = a;
@@ -37,16 +37,16 @@ double midpointAdaptive(double a, double b)
     {
         double f1 = f(x);
         double f2 = f(x + dx);
-        // Keep halving dx if current slope is too great
-        while (abs((f2 - f1) / (x + dx)) > maxSlope)
+        while (abs(f2 - f1) > maxDiff)
         {
+            // Keep halving dx if current delta is too great
             dx /= 2;
             f2 = f(x + dx);
         }
         // Use the midpoint rule
         area += f(x + dx / 2) * dx;
         x += dx;
-        // Asssume dx grows by degree of the function + 1
+        // Expand current internval width
         dx *= 4;
     }
     return area;
@@ -62,12 +62,16 @@ int main()
          << fixed << setprecision(15)
          << areaActual << endl;
 
+    boost::timer timer;
     double areaFixed = midpointFixed(a, b);
+    double secsFixed = timer.elapsed();
     cout << "Integral using fixed width midpoint rule =\t"
          << fixed << setprecision(15)
          << areaFixed << endl;
 
-    double areaAdaptive = midpointAdpative(a, b);
+    timer.restart();
+    double areaAdaptive = midpointAdaptive(a, b);
+    double secsAdaptive = timer.elapsed();
     cout << "Integral using adaptive width midpoint rule =\t"
          << fixed << setprecision(15)
          << areaAdaptive << endl
@@ -83,6 +87,9 @@ int main()
          << abs((areaActual - areaAdaptive)) / areaActual * 100
          << endl
          << endl;
+
+    cout << "Time (sec) Fixed = \t" << secsFixed << endl
+         << "Time (sec) Adaptive = \t" << secsAdaptive << endl;
 
     return 0;
 }
