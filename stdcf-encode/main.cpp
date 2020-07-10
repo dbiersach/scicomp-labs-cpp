@@ -2,6 +2,16 @@
 
 using namespace std;
 
+vector<int> NormalizeCF(vector<int>& terms)
+{
+    if (terms.size() < 19 && terms.back() == 1)
+    {
+        terms.pop_back();
+        terms.back()++;
+    }
+    return terms;
+}
+
 vector<int> EncodeCF(double x)
 {
     vector<int> terms;
@@ -12,7 +22,7 @@ vector<int> EncodeCF(double x)
         if (x < 1e-9) break;
         x = 1/x;
     }
-    return terms;
+    return NormalizeCF(terms);
 }
 
 void DisplayCF(const vector<int>& terms)
@@ -31,13 +41,13 @@ void DisplayCF(const vector<int>& terms)
 
 int main()
 {
-    double x = (1 + sqrt(5)) / 2;
+    double x = 3.245;
 
     auto terms = EncodeCF(x);
 
     cout << "To " << terms.size() << " terms, "
          << "the simple continued fraction for\n"
-         << setprecision(18) << x << " is" << endl;
+         << setprecision(14) << x << " is" << endl;
 
     DisplayCF(terms);
 
