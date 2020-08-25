@@ -4,7 +4,7 @@ using namespace std;
 
 seed_seq seed{ 2016 };
 default_random_engine generator{ seed };
-uniform_real_distribution<double> distribution(0.0, 1.0);
+uniform_real_distribution<double> distribution(nexttoward(0.0,1.0L), 1.0);
 
 int main()
 {
