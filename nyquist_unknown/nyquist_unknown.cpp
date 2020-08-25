@@ -42,7 +42,7 @@ void nyquist_unknown()
     mg->SetMinimum(-1.);
     mg->SetMaximum(1.);
 
-    TGraph* g = new TGraph(n + 1, &x.at(0), &y.at(0));
+    TGraph* g = new TGraph(n + 1, x.data(), y.data());
     g->SetLineColor(kBlue);
     g->SetMarkerColor(kRed);
     g->SetMarkerStyle(kFullDotLarge);
