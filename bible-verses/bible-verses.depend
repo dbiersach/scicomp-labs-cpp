@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1604022289 source:/home/dbiersach/scicomp-labs-cpp/bible-verses/main.cpp
+	"stdafx.h"
+
+1604016566 /home/dbiersach/scicomp-labs-cpp/bible-verses/stdafx.h
+	<algorithm>
+	<array>
+	<atomic>
+	<cassert>
+	<chrono>
+	<cmath>
+	<complex>
+	<cstdio>
+	<ctime>
+	<filesystem>
+	<fstream>
+	<functional>
+	<iomanip>
+	<iostream>
+	<iterator>
+	<limits>
+	<locale>
+	<map>
+	<memory>
+	<mutex>
+	<random>
+	<regex>
+	<sstream>
+	<string>
+	<thread>
+	<tuple>
+	<unordered_map>
+	<utility>
+	<vector>
+
